@@ -1,9 +1,28 @@
-
-
-<main class="main">
-  <div class="content">
-    <router-outlet />
+<div class="main-container">
+  <header class="header-6">
+    <div class="branding">
+      <a href="javascript://">
+        <!-- <cds-icon shape="vm-bug"></cds-icon> -->
+        <span class="title">Olympiad</span>
+      </a>
+    </div>
+    <div class="settings">
+      <a href="javascript://" class="nav-link nav-icon">
+        <!-- <cds-icon shape="cog"></cds-icon> -->
+      </a>
+    </div>
+  </header>
+  <div class="content-container">
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+    <clr-vertical-nav>
+      <a clrVerticalNavLink routerLink="/basketball">Basketball</a>
+      <!-- <a clrVerticalNavLink>Link 2</a>
+      <a clrVerticalNavLink class="active">Link 3</a>
+      <a clrVerticalNavLink>Link 4</a>
+      <a clrVerticalNavLink>Link 5</a>
+      <a clrVerticalNavLink>Link 6</a> -->
+    </clr-vertical-nav>
   </div>
-</main>
-
-
+</div>
