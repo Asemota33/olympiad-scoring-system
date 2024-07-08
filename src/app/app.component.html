@@ -16,7 +16,10 @@
     <div class="content-area">
       <router-outlet></router-outlet>
     </div>
-    <clr-vertical-nav>
+    <clr-vertical-nav
+      [clrVerticalNavCollapsible]="true"
+      [clrVerticalNavCollapsed]="true"
+    >
       <a clrVerticalNavLink routerLink="/basketball">Basketball</a>
       <!-- <a clrVerticalNavLink>Link 2</a>
       <a clrVerticalNavLink class="active">Link 3</a>
