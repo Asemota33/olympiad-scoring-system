@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatchupsComponent } from './matchups/matchups.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { BasketballComponent } from './basketball/basketball.component';
+import { GenerateMatchupsComponent } from './generate-matchups/generate-matchups.component';
 
 const routes: Routes = [
   {path: 'scoreboard', component: ScoreboardComponent},
   {path: 'matchups', component: MatchupsComponent},
   {path: 'matchups', component: MatchupsComponent},
+  {path: 'generate-matchups', component: GenerateMatchupsComponent},
   {path: 'basketball', component: BasketballComponent},
   {path: '', redirectTo: '/scoreboard', pathMatch: 'full'},
   {path: '**', component: MatchupsComponent},

@@ -11,6 +11,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClarityModule } from "@clr/angular";
 import { BasketballModule } from './basketball/basketball.module';
+import { GenerateMatchupsModule } from './generate-matchups/generate-matchups.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BasketballModule } from './basketball/basketball.module';
     BrowserModule,
     ClarityModule,
     ReactiveFormsModule,
-    AppRoutingModule, BasketballModule
+    AppRoutingModule, BasketballModule,
+    GenerateMatchupsModule
   ],
   providers: [
     provideAnimationsAsync()

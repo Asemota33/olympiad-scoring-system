@@ -1,0 +1,32 @@
+.matchup-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    flex-wrap: wrap;
+
+    margin-top: 16px;
+}
+
+.game-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.team-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: auto;
+    gap: 16px;
+
+    // justify-content: space-between;
+   // width: 100%;
+
+}
+
+.input-field{
+    margin-left: auto;
+}
