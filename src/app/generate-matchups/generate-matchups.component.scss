@@ -4,8 +4,9 @@
     gap: 16px;
 
     flex-wrap: wrap;
-
     margin-top: 16px;
+
+    width: 400px;
 }
 
 .game-name{
@@ -13,6 +14,7 @@
     flex-direction: row;
     align-items: center;
     gap: 16px;
+    width: 100%;
 }
 
 .team-item{
@@ -23,10 +25,14 @@
     gap: 16px;
 
     // justify-content: space-between;
-   // width: 100%;
+   width: 100%;
 
 }
 
 .input-field{
     margin-left: auto;
+}
+
+label{
+    width: 130px;
 }

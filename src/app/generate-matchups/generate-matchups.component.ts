@@ -15,7 +15,7 @@ export class GenerateMatchupsComponent {
     this.teamsForm = this.fb.group({
       gameName: '',
       teams: this.fb.array([
-        this.fb.control(null)
+        this.fb.control(null), this.fb.control(null)
       ])
     })
   }
