@@ -1,0 +1,83 @@
+<clr-datagrid class="datagrid-compact" cds-text="subsection">
+  <clr-dg-column style="width: 50px">ID</clr-dg-column>
+  <clr-dg-column style="width: 180px">First Name</clr-dg-column>
+  <clr-dg-column style="width: 180px">Last Name</clr-dg-column>
+  <clr-dg-column style="width: 220px">Email</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let user of users" [clrDgItem]="user">
+    <ng-container>
+      <clr-dg-cell>
+        <div class="read-only-cell">{{ user?.id }}</div>
+      </clr-dg-cell>
+      <clr-dg-cell>
+        <div class="read-only-cell">{{ user?.first_name }}</div>
+      </clr-dg-cell>
+      <clr-dg-cell>
+        <div class="read-only-cell">{{ user?.last_name }}</div>
+      </clr-dg-cell>
+      <clr-dg-cell>
+        <div class="read-only-cell">{{ user?.email }}</div>
+      </clr-dg-cell>
+    </ng-container>
+  </clr-dg-row>
+  <ng-template
+    [(clrIfDetail)]="editUser"
+    (clrIfDetailChange)="onDetailOpen($event)"
+    let-detail
+  >
+    <clr-dg-detail>
+      <clr-dg-detail-header
+        >Editing user with ID {{ detail.id }}</clr-dg-detail-header
+      >
+      <clr-dg-detail-body>
+        <div class="modal-body-1">
+          <form clrForm>
+            <clr-input-container>
+              <label>First_Name</label>
+              <input
+                clrInput
+                type="text"
+                [(ngModel)]="uncommitedUser.first_name"
+                name="first_name"
+              />
+            </clr-input-container>
+            <clr-input-container>
+              <label>Last_name</label>
+              <input
+                clrInput
+                type="text"
+                [(ngModel)]="uncommitedUser.last_name"
+                name="last_name"
+              />
+            </clr-input-container>
+            <clr-input-container>
+              <label>Email</label>
+              <input
+                clrInput
+                type="text"
+                [(ngModel)]="uncommitedUser.email"
+                name="email"
+              />
+            </clr-input-container>
+          </form>
+        </div>
+        <div class="modal-footer-1">
+          <button
+            type="button"
+            class="btn btn-lg btn-primary"
+            (click)="save(uncommitedUser); editUser = null"
+          >
+            OK
+          </button>
+          <button type="button" class="btn btn-lg" (click)="editUser = null">
+            Cancel
+          </button>
+        </div>
+      </clr-dg-detail-body>
+    </clr-dg-detail>
+  </ng-template>
+  <clr-dg-footer>
+    {{ users.length }} users
+    <clr-dg-pagination></clr-dg-pagination>
+  </clr-dg-footer>
+</clr-datagrid>

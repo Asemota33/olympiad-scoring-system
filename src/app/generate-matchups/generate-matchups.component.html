@@ -1,0 +1,22 @@
+<div class="matchup-container">
+  <div class="game-name">
+    <label>Game Name </label>
+    <input clrInput name="game" [formControl]="getGameNameControl()" />
+  </div>
+
+  <div
+    *ngFor="let team of getPhonesFormControls(); let i = index"
+    class="team-item"
+  >
+    <label>Team {{ i + 1 }} </label>
+    <input clrInput name="team" [formControl]="team" />
+  </div>
+</div>
+<br />
+<button class="btn btn-outline" (click)="addTeam()">Add an extra team</button>
+
+<button class="btn btn-primary">
+  Generate Matchup
+</button>
+
+<br />

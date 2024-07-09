@@ -1,4 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@cds/core/global.min.css';
+@import '@cds/core/styles/theme.dark.min.css';
+@import '@clr/ui/clr-ui.min.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.clr-input,
+.clr-input-wrapper, .clr-control-container {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.clr-control-container, 
+.clr-input-wrapper.clr-input {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.clr-form-control{
+    width: 100% !important;  
+}

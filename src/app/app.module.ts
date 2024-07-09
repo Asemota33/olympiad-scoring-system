@@ -7,9 +7,11 @@ import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { MatchupsComponent } from './matchups/matchups.component';
 import { MatchupResultsComponent } from './matchup-results/matchup-results.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { OlympiadMaterialModule } from './material-module';
+// import { OlympiadMaterialModule } from './material-module';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ClarityModule } from "@clr/angular";
+import { BasketballModule } from './basketball/basketball.module';
+import { GenerateMatchupsModule } from './generate-matchups/generate-matchups.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    OlympiadMaterialModule,
+    ClarityModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule, BasketballModule,
+    GenerateMatchupsModule
   ],
   providers: [
     provideAnimationsAsync()
