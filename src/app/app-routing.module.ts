@@ -11,8 +11,8 @@ const routes: Routes = [
     path: 'matchups', 
     component: MatchupsComponent,
     children: [
-    {path: 'generate-matchups', component: GenerateMatchupsComponent, outlet: "matchups"},
-    {path: 'basketball', component: BasketballComponent, outlet: "matchups"},
+      {path: 'generate-matchups', component: GenerateMatchupsComponent, outlet: "matchups"},
+      {path: 'basketball', component: BasketballComponent, outlet: "matchups"},
     ],
     
   },
