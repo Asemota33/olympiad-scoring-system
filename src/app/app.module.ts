@@ -12,13 +12,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ClarityModule } from "@clr/angular";
 import { BasketballModule } from './basketball/basketball.module';
 import { GenerateMatchupsModule } from './generate-matchups/generate-matchups.module';
+import { GenericDatagridComponent } from './scoreboard/generic-datagrid/generic-datagrid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScoreboardComponent,
     MatchupsComponent,
-    MatchupResultsComponent
+    MatchupResultsComponent,
+    GenericDatagridComponent
   ],
   imports: [
     BrowserModule,

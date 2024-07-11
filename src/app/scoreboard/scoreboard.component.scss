@@ -11,7 +11,16 @@ $image-path: 'images/OlympiadBG.jpeg';
   position: relative;
 }
 
-.results_table {
-    width: "100vw"
-}
 
+.page_title {
+  margin-bottom: -0.80em; 
+  margin-top: 2em; 
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative; 
+  z-index: 10;
+
+//   &_container {
+//     margin-top: 1em;
+    
+// }   
+}

@@ -7,17 +7,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScoreboardComponent implements OnInit{
   
-  users: any;
+  gameRankings: any;
+  columnHeader: string[] = [];
   
   ngOnInit(): void {
-    this.users = [
+    this.gameRankings = [
       {
-        id: "1",
-        name: "michael",
-        creation: "value",
-        color: "value2"
-      }
+        game: "soccer",
+        first: "pink",
+        second: "green",
+        third: "yellow",
+        fourth: "blue"
+      },
+      {
+        game: "soccer",
+        first: "pink",
+        second: "grey",
+        third: "yellow",
+        fourth: "blue"
+      },
+      {
+        game: "soccer",
+        first: "orange",
+        second: "green",
+        third: "yellow",
+        fourth: "blue"
+      },
+      {
+        game: "soccer",
+        first: "pink",
+        second: "green",
+        third: "red",
+        fourth: "blue"
+      },
+      {
+        game: "soccer",
+        first: "pink",
+        second: "green",
+        third: "yellow",
+        fourth: "purple"
+      },
     ]
+
+    this.columnHeader = ["Game", "First Place", "Second Place", "Third Place", "Fourth Place"]
   }
   
 }
