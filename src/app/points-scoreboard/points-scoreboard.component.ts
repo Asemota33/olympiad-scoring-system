@@ -26,6 +26,6 @@ export class PointsScoreboardComponent {
 
   ngOnInit(): void {
 
-    this.columnHeader = ["Teams", "# of Firsts", "# of Seconds", "# of Thirds", "# of Fourths"]
+    this.columnHeader = ["Teams", "# of Firsts", "# of Seconds", "# of Thirds", "# of Fourths", "Total Points"]
   }
 }
