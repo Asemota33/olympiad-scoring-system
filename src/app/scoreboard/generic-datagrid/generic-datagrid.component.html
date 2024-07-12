@@ -6,7 +6,7 @@
         <span cds-text="headline">{{ header }}</span>
       </clr-dg-column>
       <!-- Body -->
-      <clr-dg-row *ngFor="let data of dataList">
+      <clr-dg-row *ngFor="let data of dataArray">
         <clr-dg-cell *ngFor="let key of keys">
           <!-- if value of key is color change color of text -->
           <span

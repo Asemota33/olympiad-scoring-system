@@ -3,11 +3,11 @@
     <!-- Title -->
     <div class="page_title_container clr-row clr-justify-content-center">
       <div class="clr-align-self-center">
-        <h1 class="page_title">Where Do You Rank</h1>
+        <h1 class="page_title">Where Do You Rank?</h1>
       </div>
 
       <!-- Data Grid -->
-      <div class="datagrid_container clr-align-self-center clr-col-10">
+      <div class="datagrid_container clr-align-self-center clr-col-10" *ngIf="dataReady | async">
         <app-generic-datagrid [dataList]="gameRankings" [columnHeaders]="columnHeader"> </app-generic-datagrid>
       </div>
 

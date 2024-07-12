@@ -1,29 +1,41 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { map, Observable, timer } from 'rxjs';
 
 @Component({
   selector: 'app-generic-datagrid',
   templateUrl: './generic-datagrid.component.html',
   styleUrl: './generic-datagrid.component.scss'
 })
-export class GenericDatagridComponent implements OnInit{
+export class GenericDatagridComponent implements OnInit, OnChanges{
   
   users: any;
-  @Input() dataList: any;
+  @Input() dataList: Observable<any> | undefined;
   @Input() columnHeaders: string[] = [];
-  colors: string[] = ["orange", "blue", "yellow", "red", "pink", "grey", "purple", "green"];
+  colors: string[] = ["orange", "blue", "yellow", "red", "pink", "grey", "gray", "purple", "green"];
   keys: any;
+  dataArray = [];
   
   ngOnInit(): void {
-    this.getObjectKeys();
+    this.getObjectKeys();   
+  }
 
+  ngOnChanges() {
+    this.dataList?.pipe(
+      map((results: any) => {
+        return results
+      })).subscribe(mappedResults => {
+        this.dataArray = mappedResults
+      })
   }
 
   getObjectKeys() {
-    const dataListObject = this.dataList[0];
-    this.keys = Object.keys(dataListObject);
+    if(this.dataList) {
+      const dataListObject = this.dataArray[0];
+      this.keys = Object.keys(dataListObject);
+    }
   }
 
   isStringInArray(str: string): boolean {
-    return this.colors.includes(str);
+    return this.colors.includes(str.toLowerCase());
   }
 }

@@ -1,0 +1,32 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { first, Observable, of } from 'rxjs';
+import { transformedGameResults } from '../interfaces/all-interfaces.interface';
+
+
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class ScoreboardService {
+
+  private baseUrl = 'http://localhost:3000';
+
+  constructor(private http: HttpClient) { }
+
+  getGameResults(): Observable<transformedGameResults[]> {
+    const config = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+        "Access-Control-Allow-Credentials": "true"
+      }
+    };
+
+    return this.http.get<transformedGameResults[]>(`${this.baseUrl}/api/results/games`)
+
+    
+
+  }
+}

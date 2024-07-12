@@ -13,7 +13,7 @@ import { ClarityModule } from "@clr/angular";
 import { BasketballModule } from './basketball/basketball.module';
 import { GenerateMatchupsModule } from './generate-matchups/generate-matchups.module';
 import { GenericDatagridComponent } from './scoreboard/generic-datagrid/generic-datagrid.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +27,8 @@ import { GenericDatagridComponent } from './scoreboard/generic-datagrid/generic-
     ClarityModule,
     ReactiveFormsModule,
     AppRoutingModule, BasketballModule,
-    GenerateMatchupsModule
+    GenerateMatchupsModule,
+    HttpClientModule 
   ],
   providers: [
     provideAnimationsAsync()
