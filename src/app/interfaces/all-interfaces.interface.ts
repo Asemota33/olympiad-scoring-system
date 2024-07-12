@@ -17,3 +17,12 @@ export interface results {
     third: string;
     fourth: string;
   }
+
+  export interface teamPoints {
+    team: string,
+    firstPlaces: number,
+    secondPlaces: number,
+    thirdPlaces: number,
+    fourthPlaces: number,
+    totalPoints: number
+  }

@@ -14,13 +14,15 @@ import { BasketballModule } from './basketball/basketball.module';
 import { GenerateMatchupsModule } from './generate-matchups/generate-matchups.module';
 import { GenericDatagridComponent } from './scoreboard/generic-datagrid/generic-datagrid.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PointsScoreboardComponent } from './points-scoreboard/points-scoreboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     ScoreboardComponent,
     MatchupsComponent,
     MatchupResultsComponent,
-    GenericDatagridComponent
+    GenericDatagridComponent,
+    PointsScoreboardComponent
   ],
   imports: [
     BrowserModule,

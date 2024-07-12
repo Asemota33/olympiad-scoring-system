@@ -35,7 +35,8 @@ export class GenericDatagridComponent implements OnInit, OnChanges{
     }
   }
 
-  isStringInArray(str: string): boolean {
-    return this.colors.includes(str.toLowerCase());
+  isStringInArray(str: string | number): boolean {
+    const returnVal = (typeof str === 'string') ? this.colors.includes(str.toLowerCase()) : false;
+    return returnVal;
   }
 }
