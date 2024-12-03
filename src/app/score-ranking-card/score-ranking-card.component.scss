@@ -1,0 +1,48 @@
+.example-card {
+    min-width: 350px;
+    background-color: #ffffff;
+    border-radius: 5%;
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  ::ng-deep .example-card tr {
+    border-bottom: none;
+  }
+
+  .cardHeader {
+    justify-content: space-between;
+  }
+
+  .cardHeader a {
+    color: #0E8FFD;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  th, td {
+    border-bottom-style: none;
+  }
+
+  mat-card {
+    max-height: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add the shadow */
+  }
+
+  .cardTitle {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .tableHeader {
+    font-weight: 600;
+    font-size: 14px;
+    // font-family: Sharp sans;
+  }
+
+  .tableBody {
+    font-weight: 600;
+    font-size: 16px;
+  }
+

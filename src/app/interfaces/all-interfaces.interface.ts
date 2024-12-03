@@ -26,3 +26,9 @@ export interface results {
     fourthPlaces: number,
     totalPoints: number
   }
+
+  export interface scoreRankingCard {
+    position: number,
+    name: string,
+    points: number
+  }
