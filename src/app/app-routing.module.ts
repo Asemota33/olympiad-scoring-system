@@ -20,7 +20,7 @@ const routes: Routes = [
   },
 
   {path: '', redirectTo: '/scoreboard', pathMatch: 'full', },
-  {path: '**', component: MatchupsComponent},
+  {path: '**', redirectTo: '/scoreboard', pathMatch: 'full'},
 ];
 
 @NgModule({

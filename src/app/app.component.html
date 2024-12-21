@@ -1,13 +1,67 @@
-<div>
-  <mat-toolbar >
-    <mat-toolbar-row class="navigationBar">
-      <span class="navigationTitle">Olympiad</span>
-      <span class="spacer"></span>
-      <span class="pageSpacer">Overview</span>
-      <span class="pageSpacer">Rankings</span>
-      <span class="pageSpacer">Matchup Generator</span>
-      <span class="pageSpacer">Score Progression</span>
+<div class="container">
+  <div class="desktopView" *ngIf="!isSmallScreen">
+    <mat-toolbar class="navBarContainer">
+      <mat-toolbar-row class="navigationBar">
+        <div class="navContentContainer">
+          <span class="navigationTitle">Olympiad</span>
+          <span class="spacer"></span>
+          <span class="pageSpacer" *ngFor="let element of navDetails">
+            <a
+              [routerLink]="element.path"
+              routerLinkActive="active"
+              (click)="updateTitle($event)"
+            >
+              <span class="navButton">{{ element.name }}</span>
+            </a>
+          </span>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div [ngTemplateOutlet]="pageRow"></div>
+  </div>
+
+  <ng-template #pageRow>
+    <mat-toolbar-row class="pageToolBar">
+      <div class="navContentContainer">
+        <span>{{ clickedContent }}</span>
+      </div>
     </mat-toolbar-row>
-  </mat-toolbar>
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
+  </ng-template>
+
+  <div class="mobileView" *ngIf="isSmallScreen">
+    <mat-drawer-container  [hasBackdrop]="true">
+      <mat-drawer #drawer mode="side" position="end">
+        <mat-toolbar>
+          <mat-toolbar-row class="navigationBar"></mat-toolbar-row>
+        </mat-toolbar>
+        <mat-list>
+          <div *ngFor="let element of navDetails">
+            <button mat-button
+              [routerLink]="element.path"
+              routerLinkActive="active"
+              (click)="updateTitle($event)">
+              <mat-list-item class="navSideMenuOption">
+                <div class="custom-item">
+                  <p>{{ element.name }}</p>
+                </div>
+              </mat-list-item>
+            </button>
+            <mat-divider class="dividerStyle"></mat-divider>
+          </div>
+        </mat-list>
+      </mat-drawer>
+      <mat-toolbar>
+        <mat-toolbar-row class="navigationBar">
+          <div class="navContentContainer">
+            <span class="navigationTitle">Olympiad</span>
+          </div>
+          <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon fontIcon="menu">menu</mat-icon>
+          </button>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <ng-container [ngTemplateOutlet]="pageRow"></ng-container>
+    </mat-drawer-container>
+  </div>
 </div>

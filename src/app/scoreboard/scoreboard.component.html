@@ -1,25 +1,23 @@
-<div style="background-color: #F5F5F5; height: 100vh;" class="homepageContainer">
-<mat-toolbar>
-  <mat-toolbar-row class="pageToolBar">
-    <span>Overview</span>
-  </mat-toolbar-row>
-</mat-toolbar>
-  <!-- Title -->
-  <div class="page_title_container">
-    <app-score-ranking-card-container></app-score-ranking-card-container>
-
-    <!-- Data Grid -->
-    <div
-      class="datagrid_container clr-align-self-center clr-col-10"
-      *ngIf="dataReady | async"
-    >
-      <app-generic-datagrid
-        [dataList]="gameRankings"
-        [columnHeaders]="columnHeader"
-      >
-      </app-generic-datagrid>
-    </div>
-
-    <!-- </div> -->
+<div class="homepageContainer">
+  <div class="contentContainer">
+      <!-- Title -->
+      <div class="page_title_container">
+        <app-score-ranking-card-container></app-score-ranking-card-container>
+    
+        <!-- Data Grid -->
+        <div
+          class="datagrid_container clr-align-self-center clr-col-10"
+          *ngIf="dataReady | async"
+        >
+          <app-generic-datagrid
+            [dataList]="gameRankings"
+            [columnHeaders]="columnHeader"
+          >
+          </app-generic-datagrid>
+        </div>
+    
+        <!-- </div> -->
+      </div>
   </div>
+
 </div>

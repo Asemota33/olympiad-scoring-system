@@ -2,7 +2,6 @@ $image-path: 'images/OlympiadBG.jpeg';
 
 // Apply the background image to the div
 .homePageBG {
-  // background-image: url(#{$image-path});
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
@@ -31,6 +30,12 @@ $image-path: 'images/OlympiadBG.jpeg';
   background-color: white;
 }
 
-.mainBody {
-  background-color: #F5F5F5;
+.homepageContainer {
+  background-color: #F5F5F5; 
+  padding-top: 50px;
+}
+
+.contentContainer {
+  max-width: 1200px;
+  margin: 0 auto;
 }

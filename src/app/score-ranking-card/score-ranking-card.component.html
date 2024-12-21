@@ -12,10 +12,10 @@
               </th>
               <td class="tableBody" mat-cell *matCellDef="let row">
                 @if(column.header === "Name") {
-                    <span [ngStyle]="{ display: 'inline-block', width: '30px', height: '30px', backgroundColor: column.cell(row) }"></span>
+                    <span class="teamColor" [ngStyle]="{ backgroundColor: column.cell(row) }"></span>
                     &nbsp;&nbsp;
                 }
-                {{column.cell(row)}}
+                <span>{{column.cell(row)}}</span>
               </td>
             </ng-container>
           }
