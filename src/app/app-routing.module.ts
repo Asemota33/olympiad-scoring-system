@@ -4,9 +4,11 @@ import { MatchupsComponent } from './matchups/matchups.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { BasketballComponent } from './basketball/basketball.component';
 import { GenerateMatchupsComponent } from './generate-matchups/generate-matchups.component';
+import { PointsScoreboardComponent } from './points-scoreboard/points-scoreboard.component';
 
 const routes: Routes = [
   {path: 'scoreboard', component: ScoreboardComponent, },
+  {path: 'points', component: PointsScoreboardComponent, },
   {
     path: 'matchups', 
     component: MatchupsComponent,
@@ -18,7 +20,7 @@ const routes: Routes = [
   },
 
   {path: '', redirectTo: '/scoreboard', pathMatch: 'full', },
-  {path: '**', component: MatchupsComponent},
+  {path: '**', redirectTo: '/scoreboard', pathMatch: 'full'},
 ];
 
 @NgModule({

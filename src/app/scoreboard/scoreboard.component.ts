@@ -15,12 +15,12 @@ export class ScoreboardComponent implements OnInit{
   dataReady: Observable<boolean> | undefined;
   
   constructor(private scoreboardService: ScoreboardService) {
-    timer(0, 30000).subscribe(() => (
-      this.scoreboardService.getGameResults().subscribe(gameResults => {
-        this.gameRankings = of(gameResults);
-        this.dataReady = of(true);
-      })
-    ))
+    // timer(0, 30000).subscribe(() => (
+    //   this.scoreboardService.getGameResults().subscribe(gameResults => {
+    //     this.gameRankings = of(gameResults);
+    //     this.dataReady = of(true);
+    //   })
+    // ))
     
   }
 

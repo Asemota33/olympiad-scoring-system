@@ -1,0 +1,98 @@
+    .navigationBar {
+        height: 80px;
+        background: #202020;
+        color: white;
+    }
+
+    .navigationTitle {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .spacer {
+        flex: 1 1 auto;
+    }
+
+    .navButton {
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+    }
+
+    .pageSpacer {
+        padding: 0 14px;
+    }
+
+    a {
+        position: relative;
+        text-decoration: none;
+    }
+
+    a.active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -10px;
+        height: 3px;
+        background: linear-gradient(90.14deg, #FF636C 0%, #A435F3 53.5%, #0E8FFD 100%);
+    }
+
+
+    .navContentContainer {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto ;
+        flex: 1;
+    }
+
+    .pageToolBar {
+        height: 64px;
+        font-size: 24px;
+        font-weight: 700;
+        box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.2); /* Shadow only at the bottom */
+        background-color: white;
+      }
+
+    
+      .dividerStyle {
+        border-width: thin;
+        border-color: lightgray;
+      }
+
+      .navSideMenuOption {
+        
+      }
+
+      mat-list-item {
+        height: 100px; /* Set the desired height */
+        display: flex;
+        align-items: center; /* Centers content vertically */
+      }
+
+      .custom-item {
+        width: 100%;
+        text-align: center; /* Optional: centers text horizontally */
+      }
+      
+
+    // $breakpoint-mobile: 768px;
+
+    // .mobileView {
+
+    //     @media (min-width: $breakpoint-mobile) {
+    //         display: none; // Hidden on screens 768px or larger
+    //     }
+    // }
+
+    // .desktopView {
+    //     display: none;
+      
+    //     @media (min-width: $breakpoint-mobile) {
+    //       display: block; // Visible on screens 768px or larger
+    //     }
+    //   }
+
+
+
+
