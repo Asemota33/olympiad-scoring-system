@@ -1,10 +1,12 @@
+
 .example-card {
-    min-width: 350px;
+    min-width: 320px;
     background-color: #ffffff;
     border-radius: 5%;
     border-color: lightgray;
     border-style: solid;
     border-width: 1px;
+    font-family: 'Sharp Sans', sans-serif;
   }
 
   ::ng-deep .example-card tr {
@@ -23,6 +25,7 @@
 
   th, td {
     border-bottom-style: none;
+    font-family: 'Sharp Sans', sans-serif;
   }
 
   mat-card {
@@ -38,11 +41,9 @@
   .tableHeader {
     font-weight: 600;
     font-size: 14px;
-    // font-family: Sharp sans;
   }
 
   .tableBody {
-    font-weight: 600;
     font-size: 16px;
   }
 
@@ -51,4 +52,12 @@
     display: inline-block;
     width: 30px;
     height: 30px;
+  }
+
+  table tr td:first-child {
+    font-weight: 700;
+  }
+
+  table tr td:not(:first-child) {
+    font-weight: 600;
   }

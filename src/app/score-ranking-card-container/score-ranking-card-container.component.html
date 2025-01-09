@@ -1,4 +1,9 @@
 <div class="score-ranking-card-container">
+  <!-- TODO: use for loop to generate list of score ranking cards -->
+  <!-- @for (game of games; track game) {
+    <app-score-ranking-card [dataSource]="game.data" [game]="game.name">
+    </app-score-ranking-card>
+  } -->
   <app-score-ranking-card [dataSource]="ELEMENT_DATA" [game]="'Soccer'">
   </app-score-ranking-card>
   <app-score-ranking-card [dataSource]="ELEMENT_DATA" [game]="'Basektball'">

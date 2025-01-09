@@ -1,3 +1,8 @@
+    .container {
+        min-height: 100%;
+        
+    }
+
     .navigationBar {
         height: 80px;
         background: #202020;
@@ -60,10 +65,6 @@
         border-color: lightgray;
       }
 
-      .navSideMenuOption {
-        
-      }
-
       mat-list-item {
         height: 100px; /* Set the desired height */
         display: flex;
@@ -85,13 +86,9 @@
     //     }
     // }
 
-    // .desktopView {
-    //     display: none;
-      
-    //     @media (min-width: $breakpoint-mobile) {
-    //       display: block; // Visible on screens 768px or larger
-    //     }
-    //   }
+    .desktopView {
+        min-height: 100%;
+      }
 
 
 
