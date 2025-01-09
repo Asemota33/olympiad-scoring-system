@@ -61,3 +61,8 @@
   table tr td:not(:first-child) {
     font-weight: 600;
   }
+
+  .centered-content {
+    display: flex;
+    align-items: center;
+  }
