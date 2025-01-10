@@ -54,6 +54,8 @@
     }
 
     .pageToolBar {
+        position: relative;
+        z-index: 1;
         height: 64px;
         font-size: 24px;
         font-weight: 700;
@@ -68,14 +70,15 @@
       }
 
       mat-list-item {
-        height: 100px; /* Set the desired height */
+        height: 100px; 
         display: flex;
-        align-items: center; /* Centers content vertically */
+        align-items: center; 
       }
 
       .custom-item {
         width: 100%;
-        text-align: center; /* Optional: centers text horizontally */
+        text-align: center; 
+        font-family: 'Sharp Sans', sans-serif;
       }
       
 
