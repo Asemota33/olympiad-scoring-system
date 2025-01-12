@@ -144,7 +144,7 @@ h2 {
   }
 
   @media (min-width: $breakpoint-sm) {
-    margin-right: 2.01rem;
+    margin-right: 2.003rem;
   }
 
   // margin-left: 2.44rem;
@@ -298,8 +298,6 @@ h2 {
         .tournament-bracket--rounded & {
           border-top-left-radius: 0.6em;
         }
-      
-     
     }
   }
   @media (min-width: $breakpoint-lg) {
