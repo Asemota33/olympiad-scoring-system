@@ -57,9 +57,16 @@ a.active::after {
 .navContentContainer {
   display: flex;
   max-width: 1200px;
-  margin: 0 auto;
+  margin-left: auto;
   flex: 1;
   @include oss-font("SharpSans");
+}
+
+.subNavContentContainer{
+    display: flex;
+    margin-right: auto;
+    flex: 1;
+    @include oss-font("SharpSans");
 }
 
 .pageToolBar {

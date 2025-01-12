@@ -93,7 +93,7 @@ export class ScoreProgressionComponent {
           date: '1998-02-22',
           dateDisplay: '22 February 1998',
           teams: [
-            { name: 'Russia', code: 'RUS', flag: 'ru', score: 1 },
+            { name: 'Russia', code: 'RUS', flag: 'ru', score: 1 , medal: 'silver'},
             { name: 'Sweden', code: 'SWE', flag: 'se', score: 3, isWinner: true, medal: 'gold' }
           ]
         }

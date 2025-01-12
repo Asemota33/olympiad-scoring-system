@@ -47,11 +47,10 @@
                     <span class="tournament-bracket__number">{{
                       team.score
                     }}</span>
-                    <span
+                    <div
                       *ngIf="team.medal"
-                      [ngClass]="team.medalClass"
-                      class="tournament-bracket__medal fa fa-trophy"
-                    ></span>
+                      class="tournament-bracket__medal fa fa-trophy {{team.medal}}"
+                    ></div>
                   </td>
                 </tr>
               </tbody>
