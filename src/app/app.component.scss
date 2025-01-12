@@ -1,100 +1,94 @@
-    .container {
-        min-height: 100%;
-        
-    }
+@import "../fonts.scss";
 
-    .navigationBar {
-        height: 80px;
-        background: #202020;
-        color: white;
-        font-family: 'Sharp Sans', sans-serif;
-    }
+.container {
+  min-height: 100%;
+}
 
-    .navigationTitle {
-        font-size: 24px;
-        font-weight: 600;
-    }
+.navigationBar {
+  height: 80px;
+  background: #202020;
+  color: white;
 
-    .spacer {
-        flex: 1 1 auto;
-    }
+  @include oss-font("SharpSans");
+}
 
-    .navButton {
-        font-size: 18px;
-        font-weight: 500;
-        color: white;
-    }
+.navigationTitle {
+  font-size: 24px;
 
-    .pageSpacer {
-        padding: 0 14px;
-    }
+  @include oss-font("SharpSansBold", 24);
+}
 
-    a {
-        position: relative;
-        text-decoration: none;
-    }
+.spacer {
+  flex: 1 1 auto;
+}
 
-    a.active::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -10px;
-        height: 3px;
-        background: linear-gradient(90.14deg, #FF636C 0%, #A435F3 53.5%, #0E8FFD 100%);
-    }
+.navButton {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
 
+  @include oss-font("SharpSans");
+}
 
-    .navContentContainer {
-        display: flex;
-        max-width: 1200px;
-        margin: 0 auto ;
-        flex: 1;
-        font-family: 'Sharp Sans', sans-serif;
-    }
+.pageSpacer {
+  padding: 0 14px;
+}
 
-    .pageToolBar {
-        position: relative;
-        z-index: 1;
-        height: 64px;
-        font-size: 24px;
-        font-weight: 700;
-        box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.2); /* Shadow only at the bottom */
-        background-color: white;
-      }
+a {
+  position: relative;
+  text-decoration: none;
+}
 
-    
-      .dividerStyle {
-        border-width: thin;
-        border-color: lightgray;
-      }
+a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 3px;
+  background: linear-gradient(
+    90.14deg,
+    #ff636c 0%,
+    #a435f3 53.5%,
+    #0e8ffd 100%
+  );
+}
 
-      mat-list-item {
-        height: 100px; 
-        display: flex;
-        align-items: center; 
-      }
+.navContentContainer {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+  @include oss-font("SharpSans");
+}
 
-      .custom-item {
-        width: 100%;
-        text-align: center; 
-        font-family: 'Sharp Sans', sans-serif;
-      }
-      
+.pageToolBar {
+  position: relative;
+  z-index: 1;
+  height: 64px;
+  font-size: 24px;
+  font-weight: 700;
+  box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.2); /* Shadow only at the bottom */
+  background-color: white;
+}
 
-    // $breakpoint-mobile: 768px;
+.dividerStyle {
+  border-width: thin;
+  border-color: lightgray;
+}
 
-    // .mobileView {
+mat-list-item {
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
 
-    //     @media (min-width: $breakpoint-mobile) {
-    //         display: none; // Hidden on screens 768px or larger
-    //     }
-    // }
+.custom-item {
+  width: 100%;
+  text-align: center;
+  @include oss-font("SharpSans");
+}
 
-    .desktopView {
-        min-height: 100%;
-      }
-
-
-
-
+.desktopView {
+  min-height: 100%;
+}

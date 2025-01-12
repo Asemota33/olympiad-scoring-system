@@ -5,10 +5,12 @@ import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { BasketballComponent } from './basketball/basketball.component';
 import { GenerateMatchupsComponent } from './generate-matchups/generate-matchups.component';
 import { PointsScoreboardComponent } from './points-scoreboard/points-scoreboard.component';
+import { ScoreProgressionComponent } from './score-progression/score-progression.component';
 
 const routes: Routes = [
   {path: 'scoreboard', component: ScoreboardComponent, },
   {path: 'points', component: PointsScoreboardComponent, },
+  {path: 'score-progression', component: ScoreProgressionComponent, },
   {
     path: 'matchups', 
     component: MatchupsComponent,

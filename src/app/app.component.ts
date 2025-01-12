@@ -18,9 +18,8 @@ export class AppComponent implements OnInit{
       { name: "Overview", path: "/scoreboard"},
       { name: "Rankings", path: "/points"},
       { name: "Matchup Generation", path: "/matchups"},
-      { name: "Score Progression", path: "#"},
-    ]
-    
+      { name: "Score Progression", path: "/score-progression"},
+    ];
   }
 
   ngOnInit(): void {

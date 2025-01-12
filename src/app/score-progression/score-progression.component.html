@@ -1,0 +1,64 @@
+<div class="page-container">
+  <div class="tournament-bracket tournament-bracket--rounded">
+    <div
+      class="tournament-bracket__round"
+      *ngFor="let round of tournamentRounds"
+    >
+      <h3 class="tournament-bracket__round-title">{{ round.title }}</h3>
+      <ul class="tournament-bracket__list">
+        <li
+          *ngFor="let match of round.matches"
+          class="tournament-bracket__item"
+        >
+          <div class="tournament-bracket__match" tabindex="0">
+            <table class="tournament-bracket__table">
+              <caption class="tournament-bracket__caption">
+                <time [attr.datetime]="match.date">{{
+                  match.dateDisplay
+                }}</time>
+              </caption>
+              <thead class="sr-only">
+                <tr>
+                  <th>Country</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody class="tournament-bracket__content">
+                <tr
+                  *ngFor="let team of match.teams"
+                  [ngClass]="{
+                    'tournament-bracket__team--winner': team.isWinner
+                  }"
+                  class="tournament-bracket__team"
+                >
+                  <td class="tournament-bracket__country">
+                    <abbr
+                      class="tournament-bracket__code"
+                      [title]="team.name"
+                      >{{ team.code }}</abbr
+                    >
+                    <span
+                      class="tournament-bracket__flag"
+                      [ngClass]="team.flagClass"
+                      aria-label="Flag"
+                    ></span>
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number">{{
+                      team.score
+                    }}</span>
+                    <span
+                      *ngIf="team.medal"
+                      [ngClass]="team.medalClass"
+                      class="tournament-bracket__medal fa fa-trophy"
+                    ></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
