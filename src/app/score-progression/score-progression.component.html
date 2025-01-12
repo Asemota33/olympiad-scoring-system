@@ -16,7 +16,7 @@
               </caption>
               <thead class="sr-only">
                 <tr>
-                  <th>Country</th>
+                  <th>Team</th>
                   <th>Score</th>
                 </tr>
               </thead>
@@ -29,16 +29,10 @@
                   class="tournament-bracket__team"
                 >
                   <td class="tournament-bracket__country">
-                    <abbr
-                      class="tournament-bracket__code"
-                      [title]="team.name"
-                      >{{ team.code }}</abbr
-                    >
-                    <span
-                      class="tournament-bracket__flag"
-                      [ngClass]="team.flagClass"
-                      aria-label="Flag"
-                    ></span>
+                    <div class="color-code {{team.code}}"></div>
+                    <!-- <div   class="tournament-bracket__code">
+                      {{ team.code | titlecase}}
+                    </div> -->
                   </td>
                   <td class="tournament-bracket__score">
                     <span class="tournament-bracket__number">{{

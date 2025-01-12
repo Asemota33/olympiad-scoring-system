@@ -16,35 +16,27 @@ export class ScoreProgressionComponent {
       title: 'Quarterfinals',
       matches: [
         {
-          date: '1998-02-18',
-          dateDisplay: '18 February 1998',
           teams: [
-            { name: 'Canada', code: 'CAN', flag: 'ca', score: 4, isWinner: true },
-            { name: 'Kazakhstan', code: 'KAZ', flag: 'kz', score: 1 }
+            { name: 'Blue', code: 'blue', score: 4, isWinner: true },
+            { name: 'Orange', code: 'orange', score: 1 }
           ]
         },
         {
-          date: '1998-02-18',
-          dateDisplay: '18 February 1998',
           teams: [
-            { name: 'Russia', code: 'RUS', flag: 'ru', score: 7, isWinner: true },
-            { name: 'Czech Republic', code: 'CZE', flag: 'cz', score: 1 }
+            { name: 'Purple', code: 'purple', score: 7, isWinner: true },
+            { name: 'Pink', code: 'pink', score: 1 }
           ]
         },
         {
-          date: '1998-02-18',
-          dateDisplay: '18 February 1998',
           teams: [
-            { name: 'Finland', code: 'FIN', flag: 'fi', score: 3, isWinner: true },
-            { name: 'Germany', code: 'GER', flag: 'de', score: 0 }
+            { name: 'Gray', code: 'gray', score: 3, isWinner: true },
+            { name: 'Red', code: 'red', score: 0 }
           ]
         },
         {
-          date: '1998-02-18',
-          dateDisplay: '18 February 1998',
           teams: [
-            { name: 'Sweden', code: 'SWE', flag: 'se', score: 2, isWinner: true },
-            { name: 'USA', code: 'USA', flag: 'us', score: 1 }
+            { name: 'Green', code: 'green', score: 2, isWinner: true },
+            { name: 'Yellow', code: 'yellow', score: 1 }
           ]
         }
       ]
@@ -54,19 +46,15 @@ export class ScoreProgressionComponent {
       title: 'Semifinals',
       matches: [
         {
-          date: '1998-02-20',
-          dateDisplay: '20 February 1998',
           teams: [
-            { name: 'Canada', code: 'CAN', flag: 'ca', score: 1 },
-            { name: 'Russia', code: 'RUS', flag: 'ru', score: 2, isWinner: true }
+            { name: 'Purple', code: 'purple', score: 1 },
+            { name: 'Blue', code: 'blue', score: 2, isWinner: true }
           ]
         },
         {
-          date: '1998-02-20',
-          dateDisplay: '20 February 1998',
           teams: [
-            { name: 'Finland', code: 'FIN', flag: 'fi', score: 1 },
-            { name: 'Sweden', code: 'SWE', flag: 'se', score: 2, isWinner: true }
+            { name: 'Gray', code: 'gray', score: 1 },
+            { name: 'Green', code: 'green', score: 2, isWinner: true }
           ]
         }
       ]
@@ -76,11 +64,9 @@ export class ScoreProgressionComponent {
       title: 'Bronze',
       matches: [
         {
-          date: '1998-02-22',
-          dateDisplay: '22 February 1998',
           teams: [
-            { name: 'Canada', code: 'CAN', flag: 'ca', score: 1 },
-            { name: 'Finland', code: 'FIN', flag: 'fin', score: 3, isWinner: true, medal: 'bronze' }
+            { name: 'Purple', code: 'purple', score: 1 },
+            { name: 'Gray', code: 'gray', score: 3, isWinner: true, medal: 'bronze' }
           ]
         }
       ]
@@ -90,17 +76,15 @@ export class ScoreProgressionComponent {
       title: 'Finals',
       matches: [
         {
-          date: '1998-02-22',
-          dateDisplay: '22 February 1998',
           teams: [
-            { name: 'Russia', code: 'RUS', flag: 'ru', score: 1 , medal: 'silver'},
-            { name: 'Sweden', code: 'SWE', flag: 'se', score: 3, isWinner: true, medal: 'gold' }
+            { name: 'Blue', code: 'blue', score: 1, medal: 'silver' },
+            { name: 'Green', code: 'green', score: 3, isWinner: true, medal: 'gold' }
           ]
         }
       ]
     }
   ];
-  
-  
- 
+
+
+
 }

@@ -450,7 +450,6 @@ h2 {
   color: #212121;
 
   @include oss-font('SharpSansBold');
-  text-transform: uppercase;
   border: 0;
   text-decoration: none;
   cursor: help;
@@ -483,8 +482,8 @@ h2 {
   padding: 0.2em 0.4em 0.2em;
   border-bottom: 0.075em solid transparent;
   font-size: 0.95rem;
-  background-color: #f5f5f5;
-  border-color: spin(shade(#f5f5f5, 10%), -10);
+  background-color: #D3D3D3;
+  // border-color: spin(shade(#f5f5f5, 10%), -10);
   .tournament-bracket__team--winner & {
     background-color: #fff176;
     border-color: spin(shade(#fff176, 2%), -10);
@@ -521,4 +520,43 @@ h2 {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.color-code{
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+.yellow{
+  background-color: yellow;
+}
+
+.red{
+  background-color: red;
+}
+
+.green{
+  background-color: green;
+}
+
+.gray{
+  background-color: gray;
+}
+
+.purple{
+  background-color: purple;
+}
+
+.blue{
+  background-color: blue;
+}
+
+.pink{
+  background-color: pink;
+}
+
+.orange{
+  background-color: orange;
 }
