@@ -182,7 +182,7 @@ h2 {
       margin-right: 0;
     }
   }
-  @media (min-width: $breakpoint-sm) {
+  @media (min-width: $breakpoint-md) {
     padding: 0.5em 1em;
     width: 100%;
 
@@ -257,9 +257,6 @@ h2 {
   outline: none;
   cursor: pointer;
   transition: padding 0.2s ease-in-out, border 0.2s linear;
-  &:focus {
-    border-color: #2196f3;
-  }
   &::before,
   &::after {
     transition: all 0.2s linear;
@@ -267,7 +264,7 @@ h2 {
   @media (max-width: $breakpoint-xs) {
     padding: 0.75em 0.5em;
   }
-  @media (min-width: $breakpoint-sm) {
+  @media (min-width: $breakpoint-md) {
     &::before,
     &::after {
       position: absolute;
@@ -281,23 +278,28 @@ h2 {
     }
 
     &::before {
-      bottom: 50%;
-      border-bottom: 2px solid #9e9e9e;
-      transform: translate(0, 1px);
 
-      .tournament-bracket--rounded & {
-        border-bottom-left-radius: 0.6em;
-      }
+        bottom: 50%;
+        border-bottom: 2px solid #9e9e9e;
+        transform: translate(0, 1px);
+  
+        .tournament-bracket--rounded & {
+          border-bottom-left-radius: 0.6em;
+        }
+     
     }
 
     &::after {
-      top: 50%;
-      border-top: 2px solid #9e9e9e;
-      transform: translate(0, -1px);
 
-      .tournament-bracket--rounded & {
-        border-top-left-radius: 0.6em;
-      }
+        top: 50%;
+        border-top: 2px solid #9e9e9e;
+        transform: translate(0, -1px);
+  
+        .tournament-bracket--rounded & {
+          border-top-left-radius: 0.6em;
+        }
+      
+     
     }
   }
   @media (min-width: $breakpoint-lg) {
