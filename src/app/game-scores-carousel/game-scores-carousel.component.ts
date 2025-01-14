@@ -89,9 +89,13 @@ export class GameScoresCarouselComponent implements OnInit {
     ];
 
     this.game = this.gameNames[0];
+
+
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   onButtonClick(game: string) {
     this.game = game;

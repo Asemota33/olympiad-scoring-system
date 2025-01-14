@@ -1,9 +1,56 @@
 <mat-card class="example-card">
-    <mat-card-header class="cardHeader">
-      <mat-card-title class="cardTitle">Full Time</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-       <img src="https://primefaces.org/cdn/primeng/images/demo/product/bamboo-watch.jpg" alt="soccer" class="gameImage">
+  <mat-card-header class="cardHeader">
+    <span class="cardTitle">Full Time</span>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-grid-list [cols]="3" rowHeight="100px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <div class="centered-content">
+          <span
+            class="teamColor"
+            [ngStyle]="{ backgroundColor: 'red' }"
+          ></span>
+          &nbsp;&nbsp;
+          <span class="teamText" >Team Red</span>
+        </div>
+      </mat-grid-tile>
 
-    </mat-card-content>
+      <mat-grid-tile [colspan]="1" [rowspan]="1"> 
+      <span class="scoreText">2 - 1</span>  
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <div class="centered-content">
+          <span
+            class="teamColor"
+            [ngStyle]="{ backgroundColor: 'green' }"
+          ></span>
+          &nbsp;&nbsp;
+          <span class="teamText">Team Green</span>
+        </div>
+       </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
 </mat-card>
+
+<!-- 
+
+  <mat-grid-list [cols]="3" rowHeight="100px">
+
+        <mat-grid-tile class="cardHeader"
+    [colspan]="3"
+    [rowspan]="1"> Title </mat-grid-tile>
+
+    <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1"> Image team 1 </mat-grid-tile>
+
+    <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1"> Score </mat-grid-tile>
+
+    <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="1"> Image team 2 </mat-grid-tile>
+
+   </mat-grid-list> -->

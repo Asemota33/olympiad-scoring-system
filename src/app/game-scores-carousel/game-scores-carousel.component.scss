@@ -1,11 +1,12 @@
 
-.flatBtn {
-  background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
-  color: white;
-  border: none;
-  font-weight: bold;
-  text-transform: uppercase;
-}
+// .flatBtn:active {
+
+
+// }
+
+// .flatBtn {
+
+// }
 
 .gameScoresSliderContainer {
     max-width: 1200px;
@@ -18,6 +19,32 @@
 }
 
 .gameBtnContainer {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    margin-top: 1em;
+    overflow-y: hidden;
+}
+
+.gameBtnContainer button {
+    background: #F0F0F0;
+    color: black;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+
+.gameBtnContainer button.cdk-focused {
+    background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
+    color: white;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+
+.gameScoreCardContainer {
     display: flex;
     width: max-content;
     gap: 20px;
