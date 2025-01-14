@@ -33,7 +33,13 @@
     <mat-drawer-container  [hasBackdrop]="true">
       <mat-drawer #drawer mode="side" position="end">
         <mat-toolbar>
-          <mat-toolbar-row class="navigationBar"></mat-toolbar-row>
+          <mat-toolbar-row class="navigationBar">
+            <div class="navContentContainer">
+              <button id="closeMenuBtn" mat-icon-button (click)="toggleNav()">
+                <mat-icon fontIcon="close">close</mat-icon>
+              </button>
+            </div>
+          </mat-toolbar-row>
         </mat-toolbar>
         <mat-list>
           <div *ngFor="let element of navDetails">
@@ -56,7 +62,7 @@
           <div class="navContentContainer">
             <span class="navigationTitle">Olympiad</span>
           </div>
-          <button mat-icon-button (click)="drawer.toggle()">
+          <button id="hamburgerMenuBtn" mat-icon-button (click)="toggleNav()">
             <mat-icon fontIcon="menu">menu</mat-icon>
           </button>
         </mat-toolbar-row>

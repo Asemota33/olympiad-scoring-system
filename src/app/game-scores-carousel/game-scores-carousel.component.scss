@@ -1,0 +1,54 @@
+
+.flatBtn {
+  background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
+  color: white;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.gameScoresSliderContainer {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
+    padding: 0 1em ;
+    background-color: #F5F5F5;
+}
+
+.gameBtnContainer {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    margin-top: 1em;
+    overflow-y: hidden;
+}
+
+.scrollableContainer {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.parentContainer {
+    overflow-x: hidden;
+    width: 90vw;
+    position: relative;
+}
+
+.gamesScoreCardsContainer {
+    height: fit-content;
+    width: 100%;
+    // background-color: blueviolet;
+    margin: 1em 0 1em 0;
+}
+
+.gameScoreCard {
+    background-color: blue;
+    height: 200px;
+    width: 300px;
+}
+.gameScoreCardCarouselContainer {
+    width: 100vw;
+}

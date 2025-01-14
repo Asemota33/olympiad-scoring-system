@@ -1,0 +1,27 @@
+<div class="gameScoresSliderContainer">
+  <!-- Mobile Scrollable buttons -->
+  <div class="parentContainer">
+    <div class="scrollableContainer">
+      <div class="gameBtnContainer">
+        <button *ngFor="let name of gameNames" class="flatBtn" (click)="onButtonClick(name)" mat-flat-button>
+          {{ name }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scrollable game score cards -->
+  <div class="gamesScoreCardsContainer">
+    <div class="parentContainer">
+      <div class="scrollableContainer">
+        <div class="gameBtnContainer">
+          
+          <app-score-ranking-card [dataSource]="ELEMENT_DATA" [game]="game">
+          </app-score-ranking-card>
+          <app-game-score-card></app-game-score-card>
+      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

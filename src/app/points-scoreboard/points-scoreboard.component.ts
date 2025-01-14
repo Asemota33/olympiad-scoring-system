@@ -15,12 +15,12 @@ export class PointsScoreboardComponent {
   dataReady: Observable<boolean> | undefined;
   
   constructor(private scoreboardService: ScoreboardService) {
-    timer(0, 30000).subscribe(() => (
-      this.scoreboardService.getTeamPoints().subscribe(teamResults => {
-        this.gameRankings = of(teamResults);
-        this.dataReady = of(true);
-      })
-    ))
+    // timer(0, 30000).subscribe(() => (
+    //   this.scoreboardService.getTeamPoints().subscribe(teamResults => {
+    //     this.gameRankings = of(teamResults);
+    //     this.dataReady = of(true);
+    //   })
+    // ))
     
   }
 
