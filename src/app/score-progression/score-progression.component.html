@@ -1,0 +1,54 @@
+<div class="page-container">
+  <div class="tournament-bracket tournament-bracket--rounded">
+    <div
+      class="tournament-bracket__round"
+      *ngFor="let round of tournamentRounds"
+    >
+      <h3 class="tournament-bracket__round-title">{{ round.title }}</h3>
+      <ul class="tournament-bracket__list">
+        <li
+          *ngFor="let match of round.matches"
+          class="tournament-bracket__item"
+        >
+          <div class="tournament-bracket__match" tabindex="0">
+            <table class="tournament-bracket__table">
+              <caption class="tournament-bracket__caption">
+              </caption>
+              <thead class="sr-only">
+                <tr>
+                  <th>Team</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody class="tournament-bracket__content">
+                <tr
+                  *ngFor="let team of match.teams"
+                  [ngClass]="{
+                    'tournament-bracket__team--winner': team.isWinner
+                  }"
+                  class="tournament-bracket__team"
+                >
+                  <td class="tournament-bracket__country">
+                    <div class="color-code {{team.code}}"></div>
+                    <!-- <div   class="tournament-bracket__code">
+                      {{ team.code | titlecase}}
+                    </div> -->
+                  </td>
+                  <td class="tournament-bracket__score">
+                    <span class="tournament-bracket__number">{{
+                      team.score
+                    }}</span>
+                    <div
+                      *ngIf="team.medal"
+                      class="tournament-bracket__medal fa fa-trophy {{team.medal}}"
+                    ></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

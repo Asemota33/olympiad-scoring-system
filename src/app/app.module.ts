@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PointsScoreboardComponent } from './points-scoreboard/points-scoreboard.component';
 import { ScoreRankingCardComponent } from './score-ranking-card/score-ranking-card.component';
 import { ScoreRankingCardContainerComponent } from './score-ranking-card-container/score-ranking-card-container.component';
+import { ScoreProgressionComponent } from './score-progression/score-progression.component';
 import { GameScoresCarouselComponent } from './game-scores-carousel/game-scores-carousel.component';
 import { CarouselModule } from 'primeng/carousel';
 import { GameScoreCardComponent } from './game-score-card/game-score-card.component';
@@ -30,6 +31,7 @@ import { GameScoreCardComponent } from './game-score-card/game-score-card.compon
     PointsScoreboardComponent,
     ScoreRankingCardComponent,
     ScoreRankingCardContainerComponent,
+    ScoreProgressionComponent,
     GameScoresCarouselComponent,
     GameScoreCardComponent
   ],

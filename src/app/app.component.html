@@ -2,8 +2,8 @@
   <div class="desktopView" *ngIf="!isSmallScreen">
     <mat-toolbar class="navBarContainer">
       <mat-toolbar-row class="navigationBar">
+        <span class="navigationTitle">Olympiad</span>
         <div class="navContentContainer">
-          <span class="navigationTitle">Olympiad</span>
           <span class="spacer"></span>
           <span class="pageSpacer" *ngFor="let element of navDetails">
             <a
@@ -22,7 +22,7 @@
 
   <ng-template #pageRow>
     <mat-toolbar-row class="pageToolBar">
-      <div class="navContentContainer">
+      <div class="subNavContentContainer">
         <span>{{ clickedContent }}</span>
       </div>
     </mat-toolbar-row>

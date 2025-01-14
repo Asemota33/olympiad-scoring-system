@@ -20,10 +20,10 @@ export class AppComponent implements OnInit {
     private breakpointObserver: BreakpointObserver
   ) {
     this.navDetails = [
-      { name: 'Overview', path: '/scoreboard' },
-      { name: 'Rankings', path: '/points' },
-      { name: 'Matchup Generation', path: '/matchups' },
-      { name: 'Score Progression', path: '#' },
+      { name: "Overview", path: "/scoreboard"},
+      { name: "Rankings", path: "/points"},
+      { name: "Matchup Generation", path: "/matchups"},
+      { name: "Score Progression", path: "/score-progression"},
     ];
   }
 
