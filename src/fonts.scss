@@ -1,0 +1,75 @@
+@use 'sass:math';
+
+@font-face {
+  font-family: "SharpSans";
+  src: url("assets/fonts/SharpSans.otf");
+}
+
+@font-face {
+    font-family: "SharpSansBold";
+    src: url("assets/fonts/SharpSansBold.otf");
+  }
+
+  @font-face {
+    font-family: "SharpSansBoldItalic";
+    src: url("assets/fonts/SharpSansBoldItalic.otf");
+  }
+
+  @font-face {
+    font-family: "SharpSansExtrabold";
+    src: url("assets/fonts/SharpSansExtrabold.otf");
+  }
+
+  @font-face {
+    font-family: "SharpSansExtraBoldItalic";
+    src: url("assets/fonts/SharpSansExtraBoldItalic.otf");
+  }
+
+  @font-face {
+    font-family: "SharpSansItalic";
+    src: url("assets/fonts/SharpSansItalic.otf");
+  }
+
+  @font-face {
+    font-family: "SharpSansLight";
+    src: url("assets/fonts/SharpSansLight.otf");
+  }
+  @font-face {
+    font-family: "SharpSansLightItalic";
+    src: url("assets/fonts/SharpSansLightItalic.otf");
+  }
+
+  @font-face {
+    font-family: "SharpSansMedium";
+    src: url("assets/fonts/SharpSansMedium.otf");
+  }
+
+  @font-face {
+    font-family: "SharpSansMediumItalic";
+    src: url("assets/fonts/SharpSansMediumItalic.otf");
+  }
+
+  @font-face {
+    font-family: "SharpSansSemibold";
+    src: url("assets/fonts/SharpSansSemibold.otf");
+  }
+
+  @font-face {
+    font-family: "SharpSansSemiboldItalic";
+    src: url("assets/fonts/SharpSansSemiboldItalic.otf");
+  }
+
+  @font-face {
+    font-family: "SharpSansThin";
+    src: url("assets/fonts/SharpSansThin.otf");
+  }
+
+  @font-face {
+    font-family: "SharpSansThinItalic";
+    src: url("assets/fonts/SharpSansThinItalic.otf");
+  }
+
+  @mixin oss-font($style: 'SharpSans', $size: 14){
+    font-family: $style;
+    font-size: pxToRem($size);
+  }

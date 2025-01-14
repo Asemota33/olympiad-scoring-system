@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PointsScoreboardComponent } from './points-scoreboard/points-scoreboard.component';
 import { ScoreRankingCardComponent } from './score-ranking-card/score-ranking-card.component';
 import { ScoreRankingCardContainerComponent } from './score-ranking-card-container/score-ranking-card-container.component';
+import { ScoreProgressionComponent } from './score-progression/score-progression.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { ScoreRankingCardContainerComponent } from './score-ranking-card-contain
     GenericDatagridComponent,
     PointsScoreboardComponent,
     ScoreRankingCardComponent,
-    ScoreRankingCardContainerComponent
+    ScoreRankingCardContainerComponent,
+    ScoreProgressionComponent
   ],
   imports: [
     BrowserModule,

@@ -31,11 +31,16 @@ $image-path: 'images/OlympiadBG.jpeg';
 }
 
 .homepageContainer {
+  min-height: 100vh;
   background-color: #F5F5F5; 
   padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Sharp Sans', sans-serif;
 }
 
 .contentContainer {
   max-width: 1200px;
   margin: 0 auto;
+  flex: 1;
 }
