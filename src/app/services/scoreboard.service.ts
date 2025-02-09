@@ -11,7 +11,7 @@ import { teamPoints, transformedGameResults } from '../interfaces/all-interfaces
 
 export class ScoreboardService {
 
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 

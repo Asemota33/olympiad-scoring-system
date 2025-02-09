@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   ) {
     this.navDetails = [
       { name: "Overview", path: "/scoreboard"},
-      { name: "Rankings", path: "/points"},
+      { name: "Score & Rankings", path: "/points"},
       { name: "Matchup Generation", path: "/matchups"},
       { name: "Score Progression", path: "/score-progression"},
     ];
@@ -42,7 +42,6 @@ export class AppComponent implements OnInit {
     this.breakpointObserver
       .observe(['(max-width: 768px)'])
       .subscribe((result) => {
-        console.log('result: ', result);
         this.isSmallScreen = result.matches;
       });
   }

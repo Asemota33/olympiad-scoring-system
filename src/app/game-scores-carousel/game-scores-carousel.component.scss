@@ -15,7 +15,7 @@
     // align-items: center;
     justify-content: center;
     padding: 0 1em ;
-    background-color: #F5F5F5;
+    // background-color: #F5F5F5;
 }
 
 .gameBtnContainer {
@@ -35,13 +35,17 @@
     border-radius: 20px;
 }
 
-.gameBtnContainer button.cdk-focused {
+.gameBtnContainer button.active {
     background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
     color: white;
     border: none;
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 20px;
+}
+
+.gameBtnContainer button.bigText {
+    font-size: 39px;
 }
 
 .gameScoreCardContainer {

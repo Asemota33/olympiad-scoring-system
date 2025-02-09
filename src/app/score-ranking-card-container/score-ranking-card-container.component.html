@@ -1,24 +1,9 @@
-<div class="score-ranking-card-container">
-  <!-- TODO: use for loop to generate list of score ranking cards -->
-  <!-- @for (game of games; track game) {
-    <app-score-ranking-card [dataSource]="game.data" [game]="game.name">
-    </app-score-ranking-card>
-  } -->
-  <app-score-ranking-card [dataSource]="ELEMENT_DATA" [game]="'Soccer'">
+<div *ngIf="ELEMENT_DATA" class="score-ranking-card-container">
+
+  @for (gameInfo of ELEMENT_DATA; track gameInfo) {
+
+  <app-score-ranking-card [dataSource]="gameInfo" [game]="gameInfo[0].game">
   </app-score-ranking-card>
-  <app-score-ranking-card [dataSource]="ELEMENT_DATA" [game]="'Basektball'">
-  </app-score-ranking-card>
-  <app-score-ranking-card [dataSource]="ELEMENT_DATA" [game]="'Volleyball'">
-  </app-score-ranking-card>
-  <app-score-ranking-card [dataSource]="ELEMENT_DATA" [game]="'Musical Chairs'">
-  </app-score-ranking-card>
-  <app-score-ranking-card [dataSource]="ELEMENT_DATA" [game]="'Fifa'">
-  </app-score-ranking-card>
-  <app-score-ranking-card [dataSource]="ELEMENT_DATA" [game]="'Bible Jepordy'">
-  </app-score-ranking-card>
-  <app-score-ranking-card [dataSource]="ELEMENT_DATA" [game]="'Bible Jepordy'">
-  </app-score-ranking-card>
-  <app-score-ranking-card [dataSource]="ELEMENT_DATA" [game]="'Bible Jepordy'">
-  </app-score-ranking-card>
-  
+}
+ 
 </div>

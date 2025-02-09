@@ -31,4 +31,13 @@ export interface results {
     position: number,
     name: string,
     points: number
+    game: string
+  }
+
+  export interface IGameResults {
+      game: string,
+      first: string,
+      second: string,
+      third: string,
+      fourth: string
   }

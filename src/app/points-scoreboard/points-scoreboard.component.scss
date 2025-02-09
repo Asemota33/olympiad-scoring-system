@@ -44,4 +44,30 @@ $image-path: '../../assets/images/OlympiadBG.jpeg';
 //     margin-top: 1em;
     
 // }   
+
+}
+
+.tableHeader {
+  border-bottom-style: none;
+}
+
+table {
+  background-color: transparent;
+  width: 100%;
+}
+
+.tableContainer {
+  margin-top: 40px;
+  width: 100vw;
+}
+
+.tableContainerPhone {
+  width: 300px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.heading {
+  padding-left: 16px;
+  padding-right: 16px;
 }

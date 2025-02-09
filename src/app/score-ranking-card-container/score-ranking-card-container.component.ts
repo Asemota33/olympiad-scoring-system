@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { scoreRankingCard } from '../interfaces/all-interfaces.interface';
+import { IGameResults } from '../interfaces/all-interfaces.interface';
+import { ScoreboardService } from '../services/scoreboard.service';
+
 
 @Component({
   selector: 'app-score-ranking-card-container',
@@ -8,17 +10,26 @@ import { scoreRankingCard } from '../interfaces/all-interfaces.interface';
 })
 export class ScoreRankingCardContainerComponent {
 
-  ELEMENT_DATA: scoreRankingCard[]
-  
-  constructor() {
-    this.ELEMENT_DATA = [
-      {position: 1, name: 'Red', points: 54, },
-      {position: 2, name: 'Green', points: 48, },
-      {position: 3, name: 'Blue', points: 40, },
-      // {position: 4, name: 'Yellow', points: 26, },
-    ];
+  ELEMENT_DATA: any[] = [];
+
+  constructor(private scoreboardService: ScoreboardService) {
+
+    this.scoreboardService.getGameResults().subscribe(gameScores => {
+      this.ELEMENT_DATA = this.transformGameResults(gameScores)
+    })
   }
 
-
+  transformGameResults(gameRankings: IGameResults[]) {
+      const transformedGameResults = gameRankings
+      .map((team) => (
+      [
+        {game: team.game, team: team.first},
+        {game: team.game, team: team.second},
+        {game: team.game, team: team.third},
+        // {game: team.game, team: team.fourth},
+      ]
+    ));
+      return transformedGameResults;
+    }
 
 }

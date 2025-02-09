@@ -1,28 +1,34 @@
 <div class="gameScoresSliderContainer">
   <!-- Mobile Scrollable buttons -->
-  <div class="parentContainer">
-    <div class="scrollableContainer">
-      <div class="gameBtnContainer">
-        <button *ngFor="let name of gameNames" class="flatBtn" (click)="onButtonClick(name)" mat-flat-button>
-          {{ name }}
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Scrollable game score cards -->
-  <div class="gamesScoreCardsContainer">
+   <div *ngIf="isSmallScreen">
     <div class="parentContainer">
       <div class="scrollableContainer">
-        <div class="gameScoreCardContainer">
-          <app-game-score-card></app-game-score-card>
-          <app-game-score-card></app-game-score-card>
-          <app-game-score-card></app-game-score-card>
-          <app-game-score-card></app-game-score-card>
-          <app-game-score-card></app-game-score-card>
-      
+        <div class="gameBtnContainer">
+          <button 
+          *ngFor="let name of gameNames; let i = index" 
+          [ngClass]="{'active' : selectedBtnIndex === i}"
+          (click)="onButtonClick(i)" mat-flat-button>
+            {{ name }}
+          </button>
         </div>
       </div>
     </div>
-  </div>
+  
+    <!-- Scrollable game score cards -->
+    <div class="gamesScoreCardsContainer">
+      <div class="parentContainer">
+        <div class="scrollableContainer">
+          <div class="gameScoreCardContainer">
+            <app-game-score-card></app-game-score-card>
+            <app-game-score-card></app-game-score-card>
+            <app-game-score-card></app-game-score-card>
+            <app-game-score-card></app-game-score-card>
+            <app-game-score-card></app-game-score-card>
+        
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+
 </div>
