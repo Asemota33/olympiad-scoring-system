@@ -31,4 +31,32 @@
     </div>
    </div>
 
+  <div class="gamesScoreCardsContainerDesktop" *ngIf="!isSmallScreen">
+    <div class="childContainer">
+      <div style="padding: 0px 20px 0px 20px; max-width: 95vw; flex-wrap: wrap;" class="gameBtnContainer">
+        <button 
+        *ngFor="let name of gameNames; let i = index" 
+        [ngClass]="{'active' : selectedBtnIndex === i}"
+        (click)="onButtonClick(i)" mat-flat-button>
+          {{ name }}
+        </button>
+      </div>
+  
+      <p-carousel [value]="products" [numVisible]="5" [numScroll]="5" [responsiveOptions]="responsiveOptions">
+        <ng-template pTemplate="previousicon">
+          <i class="pi pi-arrow-left"></i>
+      </ng-template>
+        <ng-template let-product pTemplate="item">
+          <app-game-score-card></app-game-score-card>
+      </ng-template>  
+      <ng-template pTemplate="nexticon">
+        <i class="pi pi-arrow-right"></i>
+    </ng-template>
+    </p-carousel>
+    </div>
+    
+
+  </div>
+
+
 </div>

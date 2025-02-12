@@ -7,7 +7,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
   templateUrl: './game-scores-carousel.component.html',
   styleUrl: './game-scores-carousel.component.scss',
 })
-export class GameScoresCarouselComponent {
+export class GameScoresCarouselComponent implements OnInit {
   gameNames = [
     'Soccer',
     'Basketball',
@@ -19,9 +19,12 @@ export class GameScoresCarouselComponent {
     'Volleyball',
     'Rugby',
     'Table Tennis',
+    
   ];
   selectedBtnIndex: number = 0;
   isSmallScreen = false;
+  products = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
+  responsiveOptions: any[] | undefined;
 
 
   constructor(
@@ -32,6 +35,39 @@ export class GameScoresCarouselComponent {
     .subscribe((result) => {
       this.isSmallScreen = result.matches;
     });
+    // this.isSmallScreen = false;
+
+    this.responsiveOptions = [
+      {
+          breakpoint: '2560px',
+          numVisible: 6,
+          numScroll: 6
+      },  
+      {
+          breakpoint: '2120px',
+          numVisible: 5,
+          numScroll: 5
+      },
+      {
+          breakpoint: '1780px',
+          numVisible: 4,
+          numScroll: 4
+      },
+      {
+          breakpoint: '1400px',
+          numVisible: 3,
+          numScroll: 3
+      },
+      {
+          breakpoint: '1100px',
+          numVisible: 2,
+          numScroll: 2
+      }
+  ];
+  }
+
+  ngOnInit(): void {
+
   }
 
   onButtonClick(index: number) {

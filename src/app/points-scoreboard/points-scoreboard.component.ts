@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
-import { Observable, timer, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import {
-  teamPoints,
-  transformedGameResults,
+  TeamResults,
 } from '../interfaces/all-interfaces.interface';
 import { ScoreboardService } from '../services/scoreboard.service';
 
-export interface TeamResults {
-   team: string, firstPlaces: number, secondPlaces: number, thirdPlaces: number, fourthPlaces: number, totalPoints: number
-}
 
 @Component({
   selector: 'app-points-scoreboard',
@@ -47,27 +43,27 @@ export class PointsScoreboardComponent {
       },
       {
         columnDef: 'numOfFirsts',
-        header: '# of Firsts',
+        header: 'Firsts',
         cell: (element: any) => `${element.firsts}`,
       },
       {
         columnDef: 'numOfSeconds',
-        header: '# of Seconds',
+        header: 'Seconds',
         cell: (element: any) => `${element.seconds}`,
       },
       {
         columnDef: 'numOfThirds',
-        header: '# of Thirds',
+        header: 'Thirds',
         cell: (element: any) => `${element.thirds}`,
       },
       {
         columnDef: 'numOfFourths',
-        header: '# of Fourths',
+        header: 'Fourths',
         cell: (element: any) => `${element.fourths}`,
       },
       {
         columnDef: 'totalPoints',
-        header: 'Total Points',
+        header: 'Points',
         cell: (element: any) => `${element.total}`,
       },
     ];

@@ -2,12 +2,13 @@
   <div class="contentContainer">
     <app-game-scores-carousel></app-game-scores-carousel>
 
-    <h1 class="heading">Rankings</h1>
+    <h3 class="heading">Rankings</h3>
     <mat-divider></mat-divider>
     <div class="tableContainer" *ngIf="dataSource">
-      <table mat-table [dataSource]="dataSource" class="">
+      <table mat-table [dataSource]="dataSource" class="fontSize">
         @for (column of columns; track column) {
-          <ng-container *ngIf="column.columnDef === 'position' else otherColumns" [matColumnDef]="column.columnDef">
+
+          <ng-container *ngIf="(column.columnDef === 'position' || column.columnDef === 'name') else otherColumns" [matColumnDef]="column.columnDef" sticky>
             <th class="tableHeader" mat-header-cell *matHeaderCellDef>
               {{column.header}}
             </th>
@@ -15,6 +16,7 @@
               {{column.cell(row)}}
             </td>
           </ng-container>
+
           <ng-template #otherColumns>
             <ng-container #otherColumns [matColumnDef]="column.columnDef">
               <th class="tableHeader" mat-header-cell *matHeaderCellDef>

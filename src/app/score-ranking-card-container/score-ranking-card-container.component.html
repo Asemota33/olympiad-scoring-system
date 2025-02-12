@@ -1,9 +1,8 @@
+<div class="spinner-container" *ngIf="!cardReady">
+  <mat-spinner></mat-spinner>
+</div>
 <div *ngIf="ELEMENT_DATA" class="score-ranking-card-container">
-
   @for (gameInfo of ELEMENT_DATA; track gameInfo) {
-
-  <app-score-ranking-card [dataSource]="gameInfo" [game]="gameInfo[0].game">
-  </app-score-ranking-card>
-}
- 
+    <app-score-ranking-card [dataSource]="gameInfo" [game]="gameInfo[0].game"></app-score-ranking-card>
+  }
 </div>

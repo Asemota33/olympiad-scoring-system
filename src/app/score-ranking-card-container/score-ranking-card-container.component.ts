@@ -11,11 +11,14 @@ import { ScoreboardService } from '../services/scoreboard.service';
 export class ScoreRankingCardContainerComponent {
 
   ELEMENT_DATA: any[] = [];
+  cardReady = false;
 
   constructor(private scoreboardService: ScoreboardService) {
-
     this.scoreboardService.getGameResults().subscribe(gameScores => {
-      this.ELEMENT_DATA = this.transformGameResults(gameScores)
+      this.ELEMENT_DATA = this.transformGameResults(gameScores);
+      setTimeout(() => { //Give data time to be loaded before displaying card
+        this.cardReady = true;
+      }, 1000);
     })
   }
 

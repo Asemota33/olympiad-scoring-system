@@ -1,4 +1,9 @@
+@import "../../fonts.scss";
 $image-path: '../../assets/images/OlympiadBG.jpeg';
+
+$mobile: 300px;
+$tablet: 600px;
+$desktop: 1024px;
 
 // Apply the background image to the div
 .homePageBG {
@@ -47,18 +52,76 @@ $image-path: '../../assets/images/OlympiadBG.jpeg';
 
 }
 
-.tableHeader {
-  border-bottom-style: none;
-}
 
 table {
-  background-color: transparent;
+  // background-color: transparent;
   width: 100%;
 }
 
+th {
+  color: #696969;
+  @include oss-font('SharpSansSemibold');
+  text-wrap: normal;
+}
+
+tr td:not(:first-child) {
+  @include oss-font('SharpSansSemibold');
+  text-wrap: normal;
+}
+
+tr td:first-child {
+  @include oss-font('SharpSansBold');
+  text-wrap: normal;
+}
+
+.tableHeader {
+  border-bottom-style: none;
+  width: 90px;
+
+  @media (min-width: $mobile) {
+    width: 50px;
+  }
+
+  @media (min-width: $tablet) {
+    width: 90px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 90px;
+  }
+}
+
+.fontSize td, th{
+  font-size: 18px;
+
+  @media (min-width: $mobile) {
+    font-size: 11px;
+  }
+
+  @media (min-width: $tablet) {
+    font-size: 14px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 14px;
+  }
+}
+
+
 .tableContainer {
-  margin-top: 40px;
-  width: 100vw;
+  @media (min-width: $mobile) {
+    width: 300px;
+    max-width: 100%;
+    overflow: auto;
+  }
+  @media (min-width: $tablet) {
+    width: auto;
+  }
+
+  @media (min-width: $desktop) {
+    width: auto;
+  }
+
 }
 
 .tableContainerPhone {

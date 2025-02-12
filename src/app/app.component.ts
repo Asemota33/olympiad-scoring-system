@@ -59,16 +59,19 @@ export class AppComponent implements OnInit {
    * @returns void
    */ 
   toggleNav() {
-    this.drawer.toggle();
-    const hamMenuBtn = document.getElementById('hamburgerMenuBtn');
-    if (hamMenuBtn) {
-      this.drawer.openedStart.subscribe(() => {
-        hamMenuBtn.style.display = 'none';
-      });
-      this.drawer.closedStart.subscribe(() => {
-        hamMenuBtn.style.display = '';
-      });
+    if(this.isSmallScreen) {
+      this.drawer.toggle();
+      const hamMenuBtn = document.getElementById('hamburgerMenuBtn');
+      if (hamMenuBtn) {
+        this.drawer.openedStart.subscribe(() => {
+          hamMenuBtn.style.display = 'none';
+        });
+        this.drawer.closedStart.subscribe(() => {
+          hamMenuBtn.style.display = '';
+        });
+      }
     }
+    
   }
 
 }
