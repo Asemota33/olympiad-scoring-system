@@ -4,14 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
-import { MatchupsComponent } from './matchups/matchups.component';
 import { MatchupResultsComponent } from './matchup-results/matchup-results.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { OlympiadMaterialModule } from './material-module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClarityModule } from "@clr/angular";
-import { BasketballModule } from './basketball/basketball.module';
-import { GenerateMatchupsModule } from './generate-matchups/generate-matchups.module';
 import { GenericDatagridComponent } from './scoreboard/generic-datagrid/generic-datagrid.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PointsScoreboardComponent } from './points-scoreboard/points-scoreboard.component';
@@ -25,7 +22,6 @@ import { GameScoreCardComponent } from './game-score-card/game-score-card.compon
   declarations: [
     AppComponent,
     ScoreboardComponent,
-    MatchupsComponent,
     MatchupResultsComponent,
     GenericDatagridComponent,
     PointsScoreboardComponent,
@@ -39,8 +35,7 @@ import { GameScoreCardComponent } from './game-score-card/game-score-card.compon
     BrowserModule,
     ClarityModule,
     ReactiveFormsModule,
-    AppRoutingModule, BasketballModule,
-    GenerateMatchupsModule,
+    AppRoutingModule,
     HttpClientModule,
     OlympiadMaterialModule,
     CarouselModule,
