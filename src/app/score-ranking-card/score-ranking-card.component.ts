@@ -1,9 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { scoreRankingCard } from '../interfaces/all-interfaces.interface';
+import { timer } from 'rxjs';
 
 
-
+export interface IGameResults { 
+  game: string,
+  teams: string[]
+}
 
 @Component({
   selector: 'app-score-ranking-card',
@@ -12,31 +14,34 @@ import { scoreRankingCard } from '../interfaces/all-interfaces.interface';
 })
 export class ScoreRankingCardComponent {
 
-  @Input() dataSource: scoreRankingCard[] = [];
-  @Input() game: string  = ""
+  @Input() dataSource: any;
+  @Input() game: any;
 
   columns: any[]
   displayedColumns: any;
+  cardReady = false;
 
 
   constructor() { 
+    timer(1000).subscribe(() => { // Waiting for data to be loaded
+      console.log("dataSource", this.dataSource)
+      if (this.dataSource && this.dataSource[0]?.game) {
+        this.game = this.dataSource[0].game
+        this.cardReady = true; // Data is loaded and card can be displayed
+      }
+    })
 
 
     this.columns = [
       {
-        columnDef: 'position',
-        header: 'No.',
-        cell: (element: any) => `${element.position}`,
+        columnDef: 'game',
+        header: 'Position',
+        cell: (element: any) => `${element.game}`,
       },
       {
-        columnDef: 'name',
-        header: 'Name',
-        cell: (element: any) => `${element.name}`,
-      },
-      {
-        columnDef: 'points',
-        header: 'Points',
-        cell: (element: any) => `${element.points}`,
+        columnDef: 'team',
+        header: 'Team',
+        cell: (element: any) => `${element.team}`,
       },
 
     ];

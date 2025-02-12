@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first, Observable, of } from 'rxjs';
 import { teamPoints, transformedGameResults } from '../interfaces/all-interfaces.interface';
+import { environment } from '../../environments/environment.development';
 
 
 
@@ -11,7 +12,7 @@ import { teamPoints, transformedGameResults } from '../interfaces/all-interfaces
 
 export class ScoreboardService {
 
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 

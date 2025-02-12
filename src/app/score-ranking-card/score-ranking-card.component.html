@@ -1,33 +1,42 @@
-<mat-card class="example-card">
+<mat-card *ngIf="!!dataSource && cardReady" class="example-card">
   <mat-card-header class="cardHeader">
-    <mat-card-title class="cardTitle">{{game}}</mat-card-title>
-        <a href="">See More</a>
+    <mat-card-title class="cardTitle">{{ game }}</mat-card-title>
+    <a href="">See More</a>
   </mat-card-header>
   <mat-card-content>
     <table mat-table [dataSource]="dataSource">
-        @for (column of columns; track column) {
-            <ng-container [matColumnDef]="column.columnDef">
-              <th class="tableHeader" style="color: lightgray;" mat-header-cell *matHeaderCellDef>
-                {{column.header}}
-              </th>
-              <td class="tableBody" mat-cell *matCellDef="let row">
-                @if(column.header === "Name") {
-                  <div class="centered-content">
-                    <span class="teamColor" [ngStyle]="{ backgroundColor: column.cell(row) }"></span>
-                    &nbsp;&nbsp;
-                    <span>{{column.cell(row)}}</span>
-                  </div>
-                }
-                @else {
-                  <span>{{column.cell(row)}}</span>
-                }
-              </td>
-            </ng-container>
+      @for (column of columns; track column; let i = $index) {
+      <ng-container [matColumnDef]="column.columnDef">
+        <th
+          class="tableHeader"
+          style="color: lightgray"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          {{ column.header }}
+        </th>
+        <td class="tableBody" mat-cell *matCellDef="let row; let rowIndex = index">
+          @if(column.header !== "Position") {
+          <div class="centered-content">
+            <span
+              class="teamColor"
+              [ngStyle]="{ backgroundColor: column.cell(row) }"
+            ></span>
+            &nbsp;&nbsp;
+            <span>{{ column.cell(row) }}</span>
+          </div>
           }
-        
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+           @else {
+          <div class="centered-content">
+            <span>{{ rowIndex + 1 }}</span>
+          </div>
+          }
+        </td>
+      </ng-container>
+      }
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
   </mat-card-content>
-
 </mat-card>

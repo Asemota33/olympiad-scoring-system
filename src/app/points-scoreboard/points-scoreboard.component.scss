@@ -1,14 +1,40 @@
+@import "../../fonts.scss";
 $image-path: '../../assets/images/OlympiadBG.jpeg';
+
+$mobile: 300px;
+$tablet: 600px;
+$desktop: 1024px;
 
 // Apply the background image to the div
 .homePageBG {
-  background-image: url(#{$image-path});
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  width: 100%; 
-  height: 100vh; 
-  position: relative;
+  min-height: 100vh;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Sharp Sans', sans-serif;
+}
+
+.mainContainer {
+  min-height: 100vh;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Sharp Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+.contentContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.flatBtn{
+  background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
+  color: white;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 
@@ -23,4 +49,88 @@ $image-path: '../../assets/images/OlympiadBG.jpeg';
 //     margin-top: 1em;
     
 // }   
+
+}
+
+
+table {
+  // background-color: transparent;
+  width: 100%;
+}
+
+th {
+  color: #696969;
+  @include oss-font('SharpSansSemibold');
+  text-wrap: normal;
+}
+
+tr td:not(:first-child) {
+  @include oss-font('SharpSansSemibold');
+  text-wrap: normal;
+}
+
+tr td:first-child {
+  @include oss-font('SharpSansBold');
+  text-wrap: normal;
+}
+
+.tableHeader {
+  border-bottom-style: none;
+  width: 90px;
+
+  @media (min-width: $mobile) {
+    width: 50px;
+  }
+
+  @media (min-width: $tablet) {
+    width: 90px;
+  }
+
+  @media (min-width: $desktop) {
+    width: 90px;
+  }
+}
+
+.fontSize td, th{
+  font-size: 18px;
+
+  @media (min-width: $mobile) {
+    font-size: 11px;
+  }
+
+  @media (min-width: $tablet) {
+    font-size: 14px;
+  }
+
+  @media (min-width: $desktop) {
+    font-size: 14px;
+  }
+}
+
+
+.tableContainer {
+  @media (min-width: $mobile) {
+    width: 300px;
+    max-width: 100%;
+    overflow: auto;
+  }
+  @media (min-width: $tablet) {
+    width: auto;
+  }
+
+  @media (min-width: $desktop) {
+    width: auto;
+  }
+
+}
+
+.tableContainerPhone {
+  width: 300px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.heading {
+  padding-left: 16px;
+  padding-right: 16px;
 }

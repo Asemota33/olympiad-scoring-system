@@ -1,46 +1,77 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'olympiad-scoring-system';
-  navDetails: Array<any>
-  clickedContent = ""
+  navDetails: Array<any>;
+  clickedContent = '';
   isSmallScreen = false;
+  @ViewChild('drawer') drawer!: MatDrawer;
 
-  constructor(private router: Router, private breakpointObserver: BreakpointObserver) {
+  constructor(
+    private router: Router,
+    private breakpointObserver: BreakpointObserver
+  ) {
     this.navDetails = [
       { name: "Overview", path: "/scoreboard"},
-      { name: "Rankings", path: "/points"},
+      { name: "Score & Rankings", path: "/points"},
       { name: "Matchup Generation", path: "/matchups"},
       { name: "Score Progression", path: "/score-progression"},
     ];
   }
 
   ngOnInit(): void {
-    const currentRoute = document.location.pathname
-    const activeLink = this.navDetails.find(link => link.path === currentRoute);
+    const currentRoute = document.location.pathname;
+    const activeLink = this.navDetails.find(
+      (link) => link.path === currentRoute
+    );
 
     if (activeLink) {
       this.clickedContent = activeLink.name;
     } else {
-      this.clickedContent = 'Overview'; 
+      this.clickedContent = 'Overview';
     }
 
-    
-    this.breakpointObserver.observe(['(max-width: 768px)']).subscribe(result => {
-      console.log("result: ", result)
-      this.isSmallScreen = result.matches;
-    });
+    this.breakpointObserver
+      .observe(['(max-width: 768px)'])
+      .subscribe((result) => {
+        this.isSmallScreen = result.matches;
+      });
   }
 
   updateTitle(event: any) {
-    const target = event.target as HTMLElement
-    this.clickedContent = target.innerText
+    this.toggleNav();
+    const target = event.target as HTMLElement;
+    this.clickedContent = target.innerText;
   }
+
+  /**
+   * 
+   * Function to toggle hamburger menu and hide toggle icons depending on state of menu
+   * 
+   * @returns void
+   */ 
+  toggleNav() {
+    if(this.isSmallScreen) {
+      this.drawer.toggle();
+      const hamMenuBtn = document.getElementById('hamburgerMenuBtn');
+      if (hamMenuBtn) {
+        this.drawer.openedStart.subscribe(() => {
+          hamMenuBtn.style.display = 'none';
+        });
+        this.drawer.closedStart.subscribe(() => {
+          hamMenuBtn.style.display = '';
+        });
+      }
+    }
+    
+  }
+
 }

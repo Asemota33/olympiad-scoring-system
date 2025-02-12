@@ -9,13 +9,13 @@
   background: #202020;
   color: white;
 
-  @include oss-font("SharpSans");
+  // @include oss-font("SharpSans");
 }
 
 .navigationTitle {
   font-size: 24px;
 
-  @include oss-font("SharpSansBold", 24);
+  // @include oss-font("SharpSansBold", 24);
 }
 
 .spacer {
@@ -27,7 +27,7 @@
   font-weight: 500;
   color: white;
 
-  @include oss-font("SharpSans");
+  // @include oss-font("SharpSans");
 }
 
 .pageSpacer {
@@ -59,14 +59,14 @@ a.active::after {
   max-width: 1200px;
   margin-left: auto;
   flex: 1;
-  @include oss-font("SharpSans");
+  // @include oss-font("SharpSans");
 }
 
 .subNavContentContainer{
     display: flex;
     margin-right: auto;
     flex: 1;
-    @include oss-font("SharpSans");
+    // @include oss-font("SharpSans");
 }
 
 .pageToolBar {
@@ -93,9 +93,13 @@ mat-list-item {
 .custom-item {
   width: 100%;
   text-align: center;
-  @include oss-font("SharpSans");
+  // @include oss-font("SharpSans");
 }
 
 .desktopView {
   min-height: 100%;
+}
+
+.mat-drawer-container {
+  background-color: white;
 }
