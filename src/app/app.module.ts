@@ -8,8 +8,6 @@ import { MatchupResultsComponent } from './matchup-results/matchup-results.compo
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { OlympiadMaterialModule } from './material-module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ClarityModule } from "@clr/angular";
-import { GenericDatagridComponent } from './scoreboard/generic-datagrid/generic-datagrid.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PointsScoreboardComponent } from './points-scoreboard/points-scoreboard.component';
 import { ScoreRankingCardComponent } from './score-ranking-card/score-ranking-card.component';
@@ -23,7 +21,6 @@ import { GameScoreCardComponent } from './game-score-card/game-score-card.compon
     AppComponent,
     ScoreboardComponent,
     MatchupResultsComponent,
-    GenericDatagridComponent,
     PointsScoreboardComponent,
     ScoreRankingCardComponent,
     ScoreRankingCardContainerComponent,
@@ -33,7 +30,6 @@ import { GameScoreCardComponent } from './game-score-card/game-score-card.compon
   ],
   imports: [
     BrowserModule,
-    ClarityModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
