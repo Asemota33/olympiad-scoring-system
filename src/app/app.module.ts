@@ -16,6 +16,7 @@ import { ScoreProgressionComponent } from './score-progression/score-progression
 import { GameScoresCarouselComponent } from './game-scores-carousel/game-scores-carousel.component';
 import { CarouselModule } from 'primeng/carousel';
 import { GameScoreCardComponent } from './game-score-card/game-score-card.component';
+import { EditScoreProgressionComponent } from './edit-score-progression/edit-score-progression.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { GameScoreCardComponent } from './game-score-card/game-score-card.compon
     ScoreRankingCardContainerComponent,
     ScoreProgressionComponent,
     GameScoresCarouselComponent,
-    GameScoreCardComponent
+    GameScoreCardComponent,
+    EditScoreProgressionComponent
   ],
   imports: [
     BrowserModule,
