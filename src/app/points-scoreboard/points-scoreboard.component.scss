@@ -110,7 +110,7 @@ tr td:first-child {
 
 .tableContainer {
   @media (min-width: $mobile) {
-    width: 300px;
+    width: 90vw;
     max-width: 100%;
     overflow: auto;
   }
@@ -133,4 +133,11 @@ tr td:first-child {
 .heading {
   padding-left: 16px;
   padding-right: 16px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 50vh; 
 }
