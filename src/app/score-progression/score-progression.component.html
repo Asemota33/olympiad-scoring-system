@@ -1,4 +1,16 @@
 <div class="page-container">
+  <div class="top-controls"> 
+    <mat-form-field class="game-dropdown">
+      <mat-label class="dropdown-label">Choose a game</mat-label>
+      <mat-select >
+        <mat-option value="option1">Football</mat-option>
+        <mat-option value="option2" disabled>Jeopardy (disabled)</mat-option>
+        <mat-option value="option3">Basketball</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="edit" (click)="editScore(selected)"> Edit <div class="edit-icon"> </div></div>
+  </div>
   <div class="tournament-bracket tournament-bracket--rounded">
     <div
       class="tournament-bracket__round"

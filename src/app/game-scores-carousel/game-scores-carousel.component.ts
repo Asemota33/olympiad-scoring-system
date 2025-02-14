@@ -1,34 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { scoreRankingCard } from '../interfaces/all-interfaces.interface';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { ActivatedRoute } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-game-scores-carousel',
   templateUrl: './game-scores-carousel.component.html',
   styleUrl: './game-scores-carousel.component.scss',
 })
-export class GameScoresCarouselComponent implements OnInit {
+export class GameScoresCarouselComponent implements OnInit, OnDestroy {
   gameNames = [
     'Soccer',
     'Basketball',
     'Tennis',
-    'Cricket',
+    '100M (Female)',
     'Baseball',
     'Golf',
     'Hockey',
     'Volleyball',
-    'Rugby',
+    '100M (Male)',
     'Table Tennis',
+    'Fifa'
     
   ];
   selectedBtnIndex: number = 0;
   isSmallScreen = false;
   products = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
   responsiveOptions: any[] | undefined;
+  destroy$ = new Subject<void>();
 
 
   constructor(
-        private breakpointObserver: BreakpointObserver
+        private breakpointObserver: BreakpointObserver,
+        private route: ActivatedRoute
       ) {
     this.breakpointObserver
     .observe(['(max-width: 768px)'])
@@ -67,10 +72,35 @@ export class GameScoresCarouselComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.checkIfGameIsSelected();
+  }
 
+  private checkIfGameIsSelected() {
+    this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe((params) => {
+      if (params && params['game']) {
+        const index = this.getIndexOfName(params['game'], this.gameNames);
+        const idx = index === -1 ? 0 : index; // If game is not found, default to first game
+        this.onButtonClick(idx);
+      }
+    });
+  }
+
+  private convertStringArrayToLowerCase(array: string[]): string[] {
+    return array.map((item) => item.toLowerCase());
+  }
+
+  private getIndexOfName(game: string, gameArray: string[]): number {
+    const lowercaseArray = this.convertStringArrayToLowerCase(gameArray);
+    const lowercaseGame = game.toLowerCase();
+    return lowercaseArray.indexOf(lowercaseGame);
   }
 
   onButtonClick(index: number) {
     this.selectedBtnIndex = index;
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

@@ -4,7 +4,12 @@
 
     <h3 class="heading">Rankings</h3>
     <mat-divider></mat-divider>
-    <div class="tableContainer" *ngIf="dataSource">
+
+    <div class="spinner-container" *ngIf="!contentReady">
+      <mat-spinner></mat-spinner>
+    </div>
+
+    <div *ngIf="dataSource && contentReady" class="tableContainer" >
       <table mat-table [dataSource]="dataSource" class="fontSize">
         @for (column of columns; track column) {
 

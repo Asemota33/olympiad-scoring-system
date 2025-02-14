@@ -1,0 +1,210 @@
+<div class="container"  *ngIf="formInitialized;">
+    <!-- Button to trigger modal -->
+    <!-- Modal Structure -->
+    <div class="modal">
+      <div
+        class="modal-dialog"
+       
+        (click)="$event.stopPropagation()"
+      >
+        <div class="modal-content">
+          <!-- Modal Header with Close Button -->
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Tournament Matches</h5>
+            <button
+              type="button"
+              class="btn-close"
+              [mat-dialog-close]="true"
+              aria-label="Close"
+            >
+              &times;
+            </button>
+          </div>
+  
+          <!-- Modal Body with Form -->
+          <div class="modal-body">
+            <form [formGroup]="tournamentForm" (ngSubmit)="submitForm()">
+              <!-- Quarter Finals -->
+              <div formArrayName="quarterFinals">
+                <div
+                  *ngFor="let match of quarterFinals?.controls; let i = index"
+                  [formGroup]="getFormArray(quarterFinals, i)"
+                  class="round"
+                >
+                  <h3>Quarter Finals Match {{ i + 1 }}</h3>
+                  <div class="input-group">
+                    <input
+                      [formControl]="
+                        getControlArrayPath('quarterFinals', i, 'teamA.name')
+                      "
+                      id="quarter{{ i }}A"
+                      class="form-control"
+                      placeholder="Team A Name"
+                    />
+                    <input
+                      [formControl]="
+                        getControlArrayPath('quarterFinals', i, 'teamA.score')
+                      "
+                      id="quarter{{ i }}AScore"
+                      class="form-control"
+                      type="number"
+                      placeholder="Score"
+                    />
+                    <span class="vs">vs</span>
+                    <input
+                      [formControl]="
+                        getControlArrayPath('quarterFinals', i, 'teamB.name')
+                      "
+                      id="quarter{{ i }}B"
+                      class="form-control"
+                      placeholder="Team B Name"
+                    />
+                    <input
+                      [formControl]="
+                        getControlArrayPath('quarterFinals', i, 'teamB.score')
+                      "
+                      id="quarter{{ i }}BScore"
+                      class="form-control"
+                      type="number"
+                      placeholder="Score"
+                    />
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Semi Finals -->
+              <div formArrayName="semiFinals">
+                <div
+                  *ngFor="let match of semiFinals?.controls; let i = index"
+                  [formGroup]="getFormArray(semiFinals, i)"
+                  class="round"
+                >
+                  <h3>Semi Finals Match {{ i + 1 }}</h3>
+                  <div class="input-group">
+                    <input
+                      [formControl]="
+                        getControlArrayPath('semiFinals', i, 'teamA.name')
+                      "
+                      id="semi{{ i }}A"
+                      class="form-control"
+                      placeholder="Team A Name"
+                    />
+                    <input
+                      [formControl]="
+                        getControlArrayPath('semiFinals', i, 'teamA.score')
+                      "
+                      id="semi{{ i }}AScore"
+                      class="form-control"
+                      type="number"
+                      placeholder="Score"
+                    />
+                    <span class="vs">vs</span>
+                    <input
+                      [formControl]="
+                        getControlArrayPath('semiFinals', i, 'teamB.name')
+                      "
+                      id="semi{{ i }}B"
+                      class="form-control"
+                      placeholder="Team B Name"
+                    />
+                    <input
+                      [formControl]="
+                        getControlArrayPath('semiFinals', i, 'teamB.score')
+                      "
+                      id="semi{{ i }}BScore"
+                      class="form-control"
+                      type="number"
+                      placeholder="Score"
+                    />
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Bronze -->
+              <div [formGroup]="bronze" class="round">
+                <h3>Bronze Match</h3>
+                <div class="input-group">
+                  <input
+                    [formControl]="bronzeTeamANameControl"
+                    id="bronzeA"
+                    class="form-control"
+                    placeholder="Team A Name"
+                  />
+                  <input
+                    [formControl]="bronzeTeamAScoreControl"
+                    id="bronzeAScore"
+                    class="form-control"
+                    type="number"
+                    placeholder="Score"
+                  />
+                  <span class="vs">vs</span>
+                  <input
+                    [formControl]="bronzeTeamBNameControl"
+                    id="bronzeB"
+                    class="form-control"
+                    placeholder="Team B Name"
+                  />
+                  <input
+                    [formControl]="bronzeTeamBScoreControl"
+                    id="bronzeBScore"
+                    class="form-control"
+                    type="number"
+                    placeholder="Score"
+                  />
+                </div>
+              </div>
+  
+              <!-- Final -->
+              <div [formGroup]="final" class="round">
+                <h3>Final Match</h3>
+                <div class="input-group">
+                  <input
+                    [formControl]="finalTeamANameControl"
+                    id="finalA"
+                    class="form-control"
+                    placeholder="Team A Name"
+                  />
+                  <input
+                    [formControl]="finalTeamAScoreControl"
+                    id="finalAScore"
+                    class="form-control"
+                    type="number"
+                    placeholder="Score"
+                  />
+                  <span class="vs">vs</span>
+                  <input
+                    [formControl]="finalTeamBNameControl"
+                    id="finalB"
+                    class="form-control"
+                    placeholder="Team B Name"
+                  />
+                  <input
+                    [formControl]="finalTeamBScoreControl"
+                    id="finalBScore"
+                    class="form-control"
+                    type="number"
+                    placeholder="Score"
+                  />
+                </div>
+              </div>
+  
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                mat-raised-button
+                color="primary"
+                class="btn btn-success w-100"
+                [mat-dialog-close]="true"
+              >
+                Save Changes
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <ng-template #showProgressbar>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </ng-template>
+    </div>
+  </div>
+  

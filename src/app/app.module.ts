@@ -8,8 +8,6 @@ import { MatchupResultsComponent } from './matchup-results/matchup-results.compo
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { OlympiadMaterialModule } from './material-module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ClarityModule } from "@clr/angular";
-import { GenericDatagridComponent } from './scoreboard/generic-datagrid/generic-datagrid.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PointsScoreboardComponent } from './points-scoreboard/points-scoreboard.component';
 import { ScoreRankingCardComponent } from './score-ranking-card/score-ranking-card.component';
@@ -18,22 +16,22 @@ import { ScoreProgressionComponent } from './score-progression/score-progression
 import { GameScoresCarouselComponent } from './game-scores-carousel/game-scores-carousel.component';
 import { CarouselModule } from 'primeng/carousel';
 import { GameScoreCardComponent } from './game-score-card/game-score-card.component';
+import { EditScoreProgressionComponent } from './edit-score-progression/edit-score-progression.component';
 @NgModule({
   declarations: [
     AppComponent,
     ScoreboardComponent,
     MatchupResultsComponent,
-    GenericDatagridComponent,
     PointsScoreboardComponent,
     ScoreRankingCardComponent,
     ScoreRankingCardContainerComponent,
     ScoreProgressionComponent,
     GameScoresCarouselComponent,
-    GameScoreCardComponent
+    GameScoreCardComponent,
+    EditScoreProgressionComponent
   ],
   imports: [
     BrowserModule,
-    ClarityModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,

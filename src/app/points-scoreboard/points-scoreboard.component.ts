@@ -18,15 +18,16 @@ export class PointsScoreboardComponent {
   displayedColumns: any;
   columns: any[];
   dataSource?: any[];
+  contentReady = false;
 
   constructor(private scoreboardService: ScoreboardService) {
+    setTimeout(() => {
       this.scoreboardService.getTeamPoints().subscribe(teamResults => {
         this.gameRankings = teamResults;
-        console.log(this.gameRankings)
         this.dataSource = this.transformedTeams(this.gameRankings)
-        console.log(this.dataSource)
-
+        this.contentReady = true;
       })
+    }, 1000);
 
     
 

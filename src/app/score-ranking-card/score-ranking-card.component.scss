@@ -23,6 +23,14 @@
     font-size: 14px;
   }
 
+  .cardHeader a:hover {
+    cursor: pointer;
+  }
+
+  .cardHyperlink {
+    border-bottom-style: solid;
+  }
+
   th, td {
     border-bottom-style: none;
     font-family: 'Sharp Sans', sans-serif;
