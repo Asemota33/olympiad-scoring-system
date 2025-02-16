@@ -1,0 +1,103 @@
+
+$dragIcon: 'assets/Drag_Vertical.svg';
+
+.mainContainer {
+    min-height: 100vh;
+    padding-top: 50px;
+    // display: flex;
+    flex-direction: column;
+    font-family: 'Sharp Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  .contentContainer {
+    max-width: 1300px;
+    margin: 0 auto;
+    flex: 1;
+  }
+
+  .chooseGameInputs {
+    display: flex;
+    justify-content: stretch;
+    // width: 40vw;
+    width: 500px;
+  }
+
+  .secondHalfContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .firstSection {
+    width: 33%;
+  }
+
+  .secondSection {
+    height: 40vh;
+    width: 33%;
+  }
+
+  .thirdSection {
+    // height: 40vh;
+    width: 26%;
+  }
+
+  :host ::ng-deep {
+    [pDraggable] {
+        cursor: move;
+    }
+}
+
+.teamColor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.dragIcon {
+    width: 20px;
+    height: 20px;
+    background-image: url($dragIcon);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .generateMatchupBtn {
+    margin-top: 1em;
+    width: 80%;
+    background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
+    color: white !important;
+    
+  }
+
+  .centered-content {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+
+  .teamColorEmblem {
+    border-radius: 30px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+  }
+
+    .teamText {
+        display: flex;
+        align-items: center;
+    }
+
+    .saveBtn {
+        width: 60% !important;
+    }
+
+    .saveBtn.active {
+        background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
+        color: white;
+        border: none;
+        // font-weight: bold;
+        // text-transform: uppercase;
+        // border-radius: 20px;
+    }
