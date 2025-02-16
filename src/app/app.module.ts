@@ -15,8 +15,10 @@ import { ScoreRankingCardContainerComponent } from './score-ranking-card-contain
 import { ScoreProgressionComponent } from './score-progression/score-progression.component';
 import { GameScoresCarouselComponent } from './game-scores-carousel/game-scores-carousel.component';
 import { CarouselModule } from 'primeng/carousel';
+import { DragDropModule } from 'primeng/dragdrop';
 import { GameScoreCardComponent } from './game-score-card/game-score-card.component';
 import { EditScoreProgressionComponent } from './edit-score-progression/edit-score-progression.component';
+import { MatchupGeneratorComponent } from './matchup-generator/matchup-generator.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,8 @@ import { EditScoreProgressionComponent } from './edit-score-progression/edit-sco
     ScoreProgressionComponent,
     GameScoresCarouselComponent,
     GameScoreCardComponent,
-    EditScoreProgressionComponent
+    EditScoreProgressionComponent,
+    MatchupGeneratorComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { EditScoreProgressionComponent } from './edit-score-progression/edit-sco
     HttpClientModule,
     OlympiadMaterialModule,
     CarouselModule,
-    
+    DragDropModule, 
   ],
   providers: [
     provideAnimationsAsync()

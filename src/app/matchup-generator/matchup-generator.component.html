@@ -1,0 +1,112 @@
+<div class="mainContainer">
+    <div class="contentContainer">
+
+        <div class="chooseGameInputs">
+            <mat-form-field>
+                <mat-label>Select game type</mat-label>
+                <mat-select >
+                    <mat-option >basketball</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Select progression type</mat-label>
+                <mat-select >
+                    <mat-option >bracket</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+
+        <div class="secondHalfContainer">
+            <div class="firstSection">
+                <div><span>Teams</span></div>
+                <div >
+                    <mat-card 
+                    style="margin-bottom: 20px; "
+                    *ngFor="let product of availableTeams"
+                    pDraggable
+                    (onDragStart)="dragStart(product)" 
+                    (onDragEnd)="dragEnd()"
+                    >
+                        <mat-card-content style="display: flex; gap: 10px">
+                            <span class="dragIcon"></span>
+                            <span
+                            class="teamColor"
+                            [ngStyle]="{ backgroundColor: product.name }"></span>
+                           <span>{{product.name}}</span> 
+                        </mat-card-content>
+                      </mat-card>
+                </div>
+            </div>
+
+            <div class="secondSection">
+                <div style="border: dashed; height: 340px; width: 100%; border-color: #cccccc; border-style: dashed; border-radius: 10px;" pDroppable (onDrop)="drop()">
+                    <div >
+                          <mat-grid-list [cols]="3" rowHeight="110px">
+                            <mat-grid-tile [colspan]="3" [rowspan]="1">
+                                <div class="centered-content">
+                                  <span class="teamText" >Drag and Drop teams for Matchup</span>
+                                </div>
+                              </mat-grid-tile>
+                            <mat-grid-tile [colspan]="1" [rowspan]="1">
+                              <div class="centered-content">
+                                <span
+                                  class="teamColorEmblem"
+                                  [ngStyle]="{ backgroundColor: ((selectedTeams && selectedTeams.length > 0)? selectedTeams[0].name : 'grey') }"
+                                ></span>
+                                &nbsp;&nbsp;
+                                <span class="teamText" >{{(selectedTeams && selectedTeams.length > 0) ? selectedTeams[0].name : " Team Name"}}
+                                    <button mat-icon-button *ngIf="(selectedTeams && selectedTeams.length > 0)" (click)="removeProduct(selectedTeams[0])">
+                                        <mat-icon >close</mat-icon>
+                                    </button>
+                                </span>
+                              </div>
+                            </mat-grid-tile>
+                      
+                            <mat-grid-tile [colspan]="1" [rowspan]="1"> 
+                            <span class="scoreText">VS</span>  
+                            </mat-grid-tile>
+                      
+                            <mat-grid-tile [colspan]="1" [rowspan]="1">
+                              <div class="centered-content">
+                                <span
+                                  class="teamColorEmblem"
+                                  [ngStyle]="{ backgroundColor: ((selectedTeams && selectedTeams.length > 1)? selectedTeams[1].name : 'grey') }"
+                                ></span>
+                                &nbsp;&nbsp;
+                                <span class="teamText" >{{(selectedTeams && selectedTeams.length > 1) ? selectedTeams[1].name : " Team Name"}}
+                                    <button mat-icon-button *ngIf="(selectedTeams && selectedTeams.length > 1)" (click)="removeProduct(selectedTeams[1])">
+                                        <mat-icon >close</mat-icon>
+                                    </button>
+                                </span>
+                              </div>
+                             </mat-grid-tile>
+
+                             <mat-grid-tile [colspan]="3" [rowspan]="1">
+                                <button      
+                                [ngClass]="{'active' : !isBtnDisabled}"
+                                mat-flat-button 
+                                class="saveBtn" 
+                                [disabled]="isBtnDisabled">Save</button>
+                               </mat-grid-tile>
+                          </mat-grid-list>
+                        </div>
+
+                </div>
+                <div style="display: flex; justify-content: center; color: white">
+                    <button mat-button class="generateMatchupBtn">Generate Random Matchups</button>
+                </div>
+            </div>
+            <div class="thirdSection">
+                <h3 style="text-align: center; margin-bottom: 0px; margin-top: 0px;">Matchups</h3>
+                <app-game-score-card></app-game-score-card>
+                <app-game-score-card></app-game-score-card>
+                <app-game-score-card></app-game-score-card>
+                <app-game-score-card></app-game-score-card>
+
+            </div>
+        </div>
+
+    </div>
+</div>
