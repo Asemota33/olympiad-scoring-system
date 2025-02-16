@@ -8,16 +8,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class MatchupGeneratorComponent implements OnInit, OnDestroy {
 
-  availableProducts: any[] | undefined;
-  selectedProducts: any[] | undefined;
-  draggedProduct: any | undefined | null;
+  availableTeams: any[] | undefined;
+  selectedTeams: any[] | undefined;
+  draggedTeam: any | undefined | null;
   isBtnDisabled = true;
 
   constructor(private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    this.selectedProducts = [];
-    this.availableProducts = [
+    this.selectedTeams = [];
+    this.availableTeams = [
       {id:'1', name: 'Purple'},
       {id:'2', name: 'Red'},
       {id:'3', name: 'Orange'},
@@ -30,16 +30,16 @@ export class MatchupGeneratorComponent implements OnInit, OnDestroy {
   }
 
   dragStart(product: any) {
-    this.draggedProduct = product;
+    this.draggedTeam = product;
 }
 
   drop() {
-    if(!!this.selectedProducts && this.selectedProducts?.length < 2) {
-      if (this.draggedProduct ) {
-        let draggedProductIndex = this.findIndex(this.draggedProduct);
-        this.selectedProducts = [...(this.selectedProducts as any[]), this.draggedProduct];
-        this.availableProducts = this.availableProducts?.filter((val, i) => i != draggedProductIndex);
-        this.draggedProduct = null;
+    if(!!this.selectedTeams && this.selectedTeams?.length < 2) {
+      if (this.draggedTeam ) {
+        let draggedTeamIndex = this.findIndex(this.draggedTeam);
+        this.selectedTeams = [...(this.selectedTeams as any[]), this.draggedTeam];
+        this.availableTeams = this.availableTeams?.filter((val, i) => i != draggedTeamIndex);
+        this.draggedTeam = null;
         this.toggleBtn();
       }
 
@@ -51,13 +51,13 @@ export class MatchupGeneratorComponent implements OnInit, OnDestroy {
   }
 
   dragEnd() {
-    this.draggedProduct = null;
+    this.draggedTeam = null;
   }
 
-  findIndex(product: any) {
+  findIndex(team: any) {
     let index = -1;
-    for (let i = 0; i < (this.availableProducts as any[]).length; i++) {
-        if (product.id === (this.availableProducts as any[])[i].id) {
+    for (let i = 0; i < (this.availableTeams as any[]).length; i++) {
+        if (team.id === (this.availableTeams as any[])[i].id) {
             index = i;
             break;
         }
@@ -65,10 +65,10 @@ export class MatchupGeneratorComponent implements OnInit, OnDestroy {
     return index;
   }
 
-  removeProduct(product: any) {
-    this.availableProducts = [...(this.availableProducts as any[]), product];
-    const dropZoneProductsLeft = this.selectedProducts?.filter((val) => val.id != product.id);
-    this.selectedProducts = dropZoneProductsLeft;
+  removeProduct(team: any) {
+    this.availableTeams = [...(this.availableTeams as any[]), team];
+    const dropZoneTeamsLeft = this.selectedTeams?.filter((val) => val.id != team.id);
+    this.selectedTeams = dropZoneTeamsLeft;
     this.toggleBtn();
   }
 
@@ -82,7 +82,7 @@ export class MatchupGeneratorComponent implements OnInit, OnDestroy {
   }
 
   toggleBtn(){
-    this.isBtnDisabled = this.selectedProducts?.length == 2 ? false : true;
+    this.isBtnDisabled = this.selectedTeams?.length == 2 ? false : true;
   }
 
   ngOnDestroy() {

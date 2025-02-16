@@ -24,7 +24,7 @@
                 <div >
                     <mat-card 
                     style="margin-bottom: 20px; "
-                    *ngFor="let product of availableProducts"
+                    *ngFor="let product of availableTeams"
                     pDraggable
                     (onDragStart)="dragStart(product)" 
                     (onDragEnd)="dragEnd()"
@@ -42,7 +42,7 @@
 
             <div class="secondSection">
                 <div style="border: dashed; height: 340px; width: 100%; border-color: #cccccc; border-style: dashed; border-radius: 10px;" pDroppable (onDrop)="drop()">
-                    <div style="" >
+                    <div >
                           <mat-grid-list [cols]="3" rowHeight="110px">
                             <mat-grid-tile [colspan]="3" [rowspan]="1">
                                 <div class="centered-content">
@@ -53,11 +53,11 @@
                               <div class="centered-content">
                                 <span
                                   class="teamColorEmblem"
-                                  [ngStyle]="{ backgroundColor: ((selectedProducts && selectedProducts.length > 0)? selectedProducts[0].name : 'grey') }"
+                                  [ngStyle]="{ backgroundColor: ((selectedTeams && selectedTeams.length > 0)? selectedTeams[0].name : 'grey') }"
                                 ></span>
                                 &nbsp;&nbsp;
-                                <span class="teamText" >{{(selectedProducts && selectedProducts.length > 0) ? selectedProducts[0].name : " Team Name"}}
-                                    <button mat-icon-button *ngIf="(selectedProducts && selectedProducts.length > 0)" (click)="removeProduct(selectedProducts[0])">
+                                <span class="teamText" >{{(selectedTeams && selectedTeams.length > 0) ? selectedTeams[0].name : " Team Name"}}
+                                    <button mat-icon-button *ngIf="(selectedTeams && selectedTeams.length > 0)" (click)="removeProduct(selectedTeams[0])">
                                         <mat-icon >close</mat-icon>
                                     </button>
                                 </span>
@@ -72,11 +72,11 @@
                               <div class="centered-content">
                                 <span
                                   class="teamColorEmblem"
-                                  [ngStyle]="{ backgroundColor: ((selectedProducts && selectedProducts.length > 1)? selectedProducts[1].name : 'grey') }"
+                                  [ngStyle]="{ backgroundColor: ((selectedTeams && selectedTeams.length > 1)? selectedTeams[1].name : 'grey') }"
                                 ></span>
                                 &nbsp;&nbsp;
-                                <span class="teamText" >{{(selectedProducts && selectedProducts.length > 1) ? selectedProducts[1].name : " Team Name"}}
-                                    <button mat-icon-button *ngIf="(selectedProducts && selectedProducts.length > 1)" (click)="removeProduct(selectedProducts[1])">
+                                <span class="teamText" >{{(selectedTeams && selectedTeams.length > 1) ? selectedTeams[1].name : " Team Name"}}
+                                    <button mat-icon-button *ngIf="(selectedTeams && selectedTeams.length > 1)" (click)="removeProduct(selectedTeams[1])">
                                         <mat-icon >close</mat-icon>
                                     </button>
                                 </span>
