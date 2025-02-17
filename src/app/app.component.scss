@@ -55,12 +55,9 @@ a.active::after {
   display: flex;
   max-width: 1200px;
   flex: 1;
-<<<<<<< HEAD
-=======
   margin-left: auto;
 
   gap: 1rem;
->>>>>>> 3d8cac9 (added changes)
   @include oss-font("SharpSans");
 }
 
@@ -68,7 +65,7 @@ a.active::after {
     display: flex;
     margin-right: auto;
     flex: 1;
-    @include oss-font("SharpSansBold", "24");
+    @include oss-font("SharpSans", "24");
 }
 
 .pageToolBar {
