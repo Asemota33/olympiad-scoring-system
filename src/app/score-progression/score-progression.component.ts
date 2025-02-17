@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable, timer, of } from 'rxjs';
-import { teamPoints, transformedGameResults } from '../interfaces/all-interfaces.interface';
-import { ScoreboardService } from '../services/scoreboard.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditScoreProgressionComponent } from '../edit-score-progression/edit-score-progression.component';
 

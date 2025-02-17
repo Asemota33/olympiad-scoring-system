@@ -9,6 +9,7 @@
   background: #202020;
   color: white;
 
+  padding: 2rem ;
   @include oss-font("SharpSans");
 }
 
@@ -28,10 +29,6 @@
   color: white;
 
   @include oss-font("SharpSans");
-}
-
-.pageSpacer {
-  padding: 0 14px;
 }
 
 a {
@@ -57,8 +54,13 @@ a.active::after {
 .navContentContainer {
   display: flex;
   max-width: 1200px;
-  margin-left: auto;
   flex: 1;
+<<<<<<< HEAD
+=======
+  margin-left: auto;
+
+  gap: 1rem;
+>>>>>>> 3d8cac9 (added changes)
   @include oss-font("SharpSans");
 }
 
