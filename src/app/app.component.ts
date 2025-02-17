@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
   navDetails: Array<any>;
   clickedContent = '';
   isSmallScreen = false;
+  matToolbarEnabled = true;
+
   @ViewChild('drawer') drawer!: MatDrawer;
 
   constructor(
@@ -32,7 +34,8 @@ export class AppComponent implements OnInit {
     const activeLink = this.navDetails.find(
       (link) => link.path === currentRoute
     );
-
+    this.toggleMatToolbar(activeLink?.name);
+    
     if (activeLink) {
       this.clickedContent = activeLink.name;
     } else {
@@ -49,7 +52,16 @@ export class AppComponent implements OnInit {
   updateTitle(event: any) {
     this.toggleNav();
     const target = event.target as HTMLElement;
+    this.toggleMatToolbar(target.innerText);
     this.clickedContent = target.innerText;
+  }
+
+  toggleMatToolbar(pageName: string) {
+    if (pageName === 'Matchup Generation') {
+      this.matToolbarEnabled = false;
+    } else {
+      this.matToolbarEnabled = true;
+    }
   }
 
   /**

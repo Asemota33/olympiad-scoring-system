@@ -1,3 +1,15 @@
+
+<mat-toolbar-row class="pageToolBar">
+    <div class="subNavContentContainer">
+        <span>Generate Matchups</span>
+    </div>
+    <div style="padding: 0px 14px; ">
+        <button style="margin-top: 0px;" mat-button class="customGamesBtn">Add Custom game</button>
+    </div>
+    <div style="padding: 0px 14px; ">
+        <button style="margin-top: 0px;" mat-button class="publishBtn">Publish</button>
+    </div>
+</mat-toolbar-row>
 <div class="mainContainer">
     <div class="contentContainer">
 
@@ -41,6 +53,7 @@
             </div>
 
             <div class="secondSection">
+                <!-- drop zone -->
                 <div style="border: dashed; height: 340px; width: 100%; border-color: #cccccc; border-style: dashed; border-radius: 10px;" pDroppable (onDrop)="drop()">
                     <div >
                           <mat-grid-list [cols]="3" rowHeight="110px">
@@ -57,7 +70,7 @@
                                 ></span>
                                 &nbsp;&nbsp;
                                 <span class="teamText" >{{(selectedTeams && selectedTeams.length > 0) ? selectedTeams[0].name : " Team Name"}}
-                                    <button mat-icon-button *ngIf="(selectedTeams && selectedTeams.length > 0)" (click)="removeProduct(selectedTeams[0])">
+                                    <button mat-icon-button *ngIf="(selectedTeams && selectedTeams.length > 0)" (click)="removeTeam(selectedTeams[0])">
                                         <mat-icon >close</mat-icon>
                                     </button>
                                 </span>
@@ -76,7 +89,7 @@
                                 ></span>
                                 &nbsp;&nbsp;
                                 <span class="teamText" >{{(selectedTeams && selectedTeams.length > 1) ? selectedTeams[1].name : " Team Name"}}
-                                    <button mat-icon-button *ngIf="(selectedTeams && selectedTeams.length > 1)" (click)="removeProduct(selectedTeams[1])">
+                                    <button mat-icon-button *ngIf="(selectedTeams && selectedTeams.length > 1)" (click)="removeTeam(selectedTeams[1])">
                                         <mat-icon >close</mat-icon>
                                     </button>
                                 </span>
@@ -86,6 +99,7 @@
                              <mat-grid-tile [colspan]="3" [rowspan]="1">
                                 <button      
                                 [ngClass]="{'active' : !isBtnDisabled}"
+                                (click)="saveMatchup()"
                                 mat-flat-button 
                                 class="saveBtn" 
                                 [disabled]="isBtnDisabled">Save</button>
@@ -100,10 +114,14 @@
             </div>
             <div class="thirdSection">
                 <h3 style="text-align: center; margin-bottom: 0px; margin-top: 0px;">Matchups</h3>
-                <app-game-score-card></app-game-score-card>
-                <app-game-score-card></app-game-score-card>
-                <app-game-score-card></app-game-score-card>
-                <app-game-score-card></app-game-score-card>
+
+                <app-matchup-card
+                    *ngFor="let matchup of matchups"
+                    [team1]="matchup.team1"
+                    [team2]="matchup.team2"
+                    (delete)="deleteMatchup($event)"
+                    >
+                </app-matchup-card>
 
             </div>
         </div>

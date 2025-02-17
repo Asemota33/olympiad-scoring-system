@@ -1,0 +1,42 @@
+<div style="display: flex; width: 600px; align-items: center;">
+    <mat-card class="example-card">
+        <mat-card-header class="cardHeader">
+          <span class="cardTitle">Round 1</span>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-grid-list [cols]="3" rowHeight="100px">
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+              <div class="centered-content">
+                <span
+                  class="teamColor"
+                  [ngStyle]="{ backgroundColor: team1 }"
+                ></span>
+                &nbsp;&nbsp;
+                <span class="teamText" >Team {{team1}}</span>
+              </div>
+            </mat-grid-tile>
+      
+            <mat-grid-tile [colspan]="1" [rowspan]="1"> 
+            <span class="scoreText">VS</span>  
+            </mat-grid-tile>
+      
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+              <div class="centered-content">
+                <span
+                  class="teamColor"
+                  [ngStyle]="{ backgroundColor: team2 }"
+                ></span>
+                &nbsp;&nbsp;
+                <span class="teamText">Team {{team2}}</span>
+              </div>
+             </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card-content>
+      </mat-card>
+      <div>
+        <button style="background-color: transparent; border: none; cursor: pointer" (click)="onDelete(team1, team2)">
+            <mat-icon style="color: red;" >delete</mat-icon>
+        </button>
+    </div>
+</div>
+
