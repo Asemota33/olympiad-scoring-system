@@ -1,12 +1,5 @@
+@import "../../fonts.scss";
 
-// .flatBtn:active {
-
-
-// }
-
-// .flatBtn {
-
-// }
 
 .gameScoresSliderContainer {
     display: flex;
@@ -25,22 +18,23 @@
 }
 
 .gameBtnContainer button {
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 20px;
     background: #F0F0F0;
     color: black;
-    border: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 20px;
+    @include oss-font("SharpSansSemibold");
+
+
+    &.active {
+        background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
+        color: white;
+    }
+
 }
 
-.gameBtnContainer button.active {
-    background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
-    color: white;
-    border: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 20px;
-}
+
 
 .gameBtnContainer button.bigText {
     font-size: 39px;

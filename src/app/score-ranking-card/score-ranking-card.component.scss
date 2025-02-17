@@ -1,4 +1,4 @@
-
+@import '../../fonts.scss';
 .example-card {
     min-width: 380px;
     background-color: #ffffff;
@@ -29,6 +29,8 @@
 
   .cardHyperlink {
     border-bottom-style: solid;
+    @include oss-font("SharpSansSemibold");
+
   }
 
   th, td {
@@ -42,13 +44,15 @@
   }
 
   .cardTitle {
-    font-weight: 700;
     font-size: 20px;
+    @include oss-font("SharpSansBold");
+
   }
 
   .tableHeader {
-    font-weight: 600;
+    @include oss-font("SharpSansSemibold");    
     font-size: 14px;
+    color: lightgray;
   }
 
   .tableBody {
@@ -63,11 +67,11 @@
   }
 
   table tr td:first-child {
-    font-weight: 700;
+    @include oss-font("SharpSansBold");
   }
 
   table tr td:not(:first-child) {
-    font-weight: 600;
+    @include oss-font("SharpSansSemibold");
   }
 
   .centered-content {

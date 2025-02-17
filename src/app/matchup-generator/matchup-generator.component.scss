@@ -1,4 +1,4 @@
-
+@import "../../fonts.scss";
 $dragIcon: 'assets/Drag_Vertical.svg';
 
 .mainContainer {
@@ -6,8 +6,9 @@ $dragIcon: 'assets/Drag_Vertical.svg';
     padding-top: 50px;
     // display: flex;
     flex-direction: column;
-    font-family: 'Sharp Sans', sans-serif;
     overflow-x: hidden;
+    @include oss-font("SharpSansSemibold");
+
   }
 
   .contentContainer {
@@ -48,6 +49,14 @@ $dragIcon: 'assets/Drag_Vertical.svg';
     }
 }
 
+.matchupsTitle {
+  text-align: center; 
+  margin-bottom: 0px; 
+  margin-top: 0px;
+  @include oss-font("SharpSansBold");
+
+}
+
 .teamColor {
     width: 20px;
     height: 20px;
@@ -63,13 +72,7 @@ $dragIcon: 'assets/Drag_Vertical.svg';
     background-repeat: no-repeat;
   }
 
-  .generateMatchupBtn {
-    margin-top: 1em;
-    width: 80%;
-    background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
-    color: white !important;
-    
-  }
+
 
   .centered-content {
     flex-direction: column;
@@ -89,24 +92,12 @@ $dragIcon: 'assets/Drag_Vertical.svg';
         align-items: center;
     }
 
-    .saveBtn {
-        width: 60% !important;
-    }
-
-    .saveBtn.active {
-        background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
-        color: white;
-        border: none;
-        // font-weight: bold;
-        // text-transform: uppercase;
-        // border-radius: 20px;
-    }
 
     .subNavContentContainer{
       display: flex;
       margin-right: auto;
       flex: 1;
-      // @include oss-font("SharpSans");
+      @include oss-font("SharpSansBold");
   }
   
   .pageToolBar {
@@ -122,17 +113,35 @@ $dragIcon: 'assets/Drag_Vertical.svg';
     background-color: white;
   }
 
-  .publishBtn {
+  .btn {
+    color: white !important;
     margin-top: 1em;
     padding: 0px 14px;
-    // width: 80%;
-    background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
-    color: white !important;
-  }
+    @include oss-font("SharpSansSemibold");
 
-  .customGamesBtn {
-    margin-top: 1em;
-    padding: 0px 14px;
-    background-color: black;
-    color: white !important;
+    &__customGames {
+      background-color: black;
+
+    }
+
+    &__publish {
+      background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
+
+    }
+
+    &__generateMatchup {
+      width: 80%;
+      background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
+    }
+
+    &__saveBtn {  
+      width: 60% !important;
+      color: #696969 !important;
+
+      &.active {
+          background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
+          border: none;
+          color: white !important;
+      }
+    }
   }
