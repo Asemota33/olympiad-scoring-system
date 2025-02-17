@@ -1,6 +1,9 @@
 /* Modal overlay background */
 @import "../../colours.scss";
 @import '../../breakpoints.scss';
+
+@import '../../fonts.scss';
+
 :host{
   @include oss-font();
 }

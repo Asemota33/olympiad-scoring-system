@@ -8,8 +8,8 @@
   height: 80px;
   background: #202020;
   color: white;
+  padding: 2rem;
 
-  padding: 2rem ;
   @include oss-font("SharpSans");
 }
 
@@ -79,6 +79,8 @@ a.active::after {
   font-weight: 700;
   box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.2); /* Shadow only at the bottom */
   background-color: white;
+
+  padding: 2rem;
 }
 
 .dividerStyle {
