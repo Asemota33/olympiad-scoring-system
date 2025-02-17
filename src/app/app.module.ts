@@ -19,6 +19,7 @@ import { DragDropModule } from 'primeng/dragdrop';
 import { GameScoreCardComponent } from './game-score-card/game-score-card.component';
 import { EditScoreProgressionComponent } from './edit-score-progression/edit-score-progression.component';
 import { MatchupGeneratorComponent } from './matchup-generator/matchup-generator.component';
+import { MatchupCardComponent } from './matchup-card/matchup-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { MatchupGeneratorComponent } from './matchup-generator/matchup-generator
     GameScoresCarouselComponent,
     GameScoreCardComponent,
     EditScoreProgressionComponent,
-    MatchupGeneratorComponent
+    MatchupGeneratorComponent,
+    MatchupCardComponent
   ],
   imports: [
     BrowserModule,

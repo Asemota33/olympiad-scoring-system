@@ -101,3 +101,38 @@ $dragIcon: 'assets/Drag_Vertical.svg';
         // text-transform: uppercase;
         // border-radius: 20px;
     }
+
+    .subNavContentContainer{
+      display: flex;
+      margin-right: auto;
+      flex: 1;
+      // @include oss-font("SharpSans");
+  }
+  
+  .pageToolBar {
+    // position: relative;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    z-index: 1;
+    height: 64px;
+    font-size: 24px;
+    font-weight: 700;
+    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.2); /* Shadow only at the bottom */
+    background-color: white;
+  }
+
+  .publishBtn {
+    margin-top: 1em;
+    padding: 0px 14px;
+    // width: 80%;
+    background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
+    color: white !important;
+  }
+
+  .customGamesBtn {
+    margin-top: 1em;
+    padding: 0px 14px;
+    background-color: black;
+    color: white !important;
+  }

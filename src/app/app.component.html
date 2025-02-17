@@ -21,7 +21,7 @@
   </div>
 
   <ng-template #pageRow>
-    <mat-toolbar-row class="pageToolBar">
+    <mat-toolbar-row  *ngIf="matToolbarEnabled" class="pageToolBar">
       <div class="subNavContentContainer">
         <span>{{ clickedContent }}</span>
       </div>
