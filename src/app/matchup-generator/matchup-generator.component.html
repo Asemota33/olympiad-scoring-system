@@ -4,10 +4,10 @@
         <span>Generate Matchups</span>
     </div>
     <div style="padding: 0px 14px; ">
-        <button style="margin-top: 0px;" mat-button class="customGamesBtn">Add Custom game</button>
+        <button style="margin-top: 0px;" mat-button class="btn btn__customGames">Add Custom game</button>
     </div>
     <div style="padding: 0px 14px; ">
-        <button style="margin-top: 0px;" mat-button class="publishBtn">Publish</button>
+        <button style="margin-top: 0px;" mat-button class="btn btn__publish">Publish</button>
     </div>
 </mat-toolbar-row>
 <div class="mainContainer">
@@ -101,7 +101,7 @@
                                 [ngClass]="{'active' : !isBtnDisabled}"
                                 (click)="saveMatchup()"
                                 mat-flat-button 
-                                class="saveBtn" 
+                                class="btn btn__saveBtn" 
                                 [disabled]="isBtnDisabled">Save</button>
                                </mat-grid-tile>
                           </mat-grid-list>
@@ -109,11 +109,11 @@
 
                 </div>
                 <div style="display: flex; justify-content: center; color: white">
-                    <button mat-button class="generateMatchupBtn">Generate Random Matchups</button>
+                    <button mat-button class="btn btn__generateMatchup">Generate Random Matchups</button>
                 </div>
             </div>
             <div class="thirdSection">
-                <h3 style="text-align: center; margin-bottom: 0px; margin-top: 0px;">Matchups</h3>
+                <h3 class="matchupsTitle">Matchups</h3>
 
                 <app-matchup-card
                     *ngFor="let matchup of matchups"

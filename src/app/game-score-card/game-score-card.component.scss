@@ -1,3 +1,5 @@
+@import "../../fonts.scss";
+
 .example-card {
   width: 310px;
   margin: 10px;
@@ -7,6 +9,8 @@
 .cardHeader {
     justify-content: center;
     font-size: 10px;
+    color: #696969;
+    @include oss-font("SharpSansSemibold");
 }
 
 .teamColor {
@@ -24,12 +28,14 @@
 
   .teamText {
     font-size: 12px;
-    font-weight: 600;
+    @include oss-font("SharpSansSemibold");
+
   }
 
   .scoreText {
     font-size: 20px;
-    font-weight: 700;
+    @include oss-font("SharpSansBold");
+
   }
 // .cardHeader {
 //     height: 10px;
