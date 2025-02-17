@@ -91,7 +91,7 @@ export class ScoreProgressionComponent {
   }
   
   editScore(selectedGame: string){
-    this.dialog.open(EditScoreProgressionComponent)
+    this.dialog.open(EditScoreProgressionComponent, {disableClose: true})
   }
 
 

@@ -68,7 +68,7 @@
 
   gap: 1rem;
 
-  @include app-md(){
+  @include app-lg(){
     flex-direction: row;
   }
 }

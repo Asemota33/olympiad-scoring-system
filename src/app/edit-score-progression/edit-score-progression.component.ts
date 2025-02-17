@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import {MatButtonModule} from '@angular/material/button';
 
@@ -26,7 +26,10 @@ export class EditScoreProgressionComponent implements OnInit {
     finalTeamAScoreControl!: FormControl;
     finalTeamBScoreControl!: FormControl;
 
-    constructor(private fb: FormBuilder) { }
+    modalOpen: boolean = false;
+
+    constructor(private fb: FormBuilder,  private el: ElementRef,private dialog: MatDialog
+     ) { }
 
     ngOnInit() {
         this.tournamentForm = this.fb.group({
@@ -103,6 +106,19 @@ export class EditScoreProgressionComponent implements OnInit {
             console.log('Form is invalid');
         }
     }
+
+
+    closeModal() {
+        // Check if form is dirty and ask for confirmation before closing
+        if (this.tournamentForm.dirty) {
+          const confirmClose = window.confirm('You have unsaved changes. Are you sure you want to close?');
+          if (confirmClose) {
+            this.dialog.closeAll();
+          }
+        } else{
+            this.dialog.closeAll();
+        }
+      }
 
     get quarterFinals() {
         return this.tournamentForm.get('quarterFinals') as FormArray;

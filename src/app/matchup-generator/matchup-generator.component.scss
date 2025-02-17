@@ -7,7 +7,7 @@ $dragIcon: 'assets/Drag_Vertical.svg';
     // display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    @include oss-font("SharpSansSemibold");
+    @include oss-font("SharpSans");
 
   }
 
@@ -97,7 +97,7 @@ $dragIcon: 'assets/Drag_Vertical.svg';
       display: flex;
       margin-right: auto;
       flex: 1;
-      @include oss-font("SharpSansBold");
+      @include oss-font("SharpSans");
   }
   
   .pageToolBar {
