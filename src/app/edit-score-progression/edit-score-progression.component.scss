@@ -1,13 +1,13 @@
 /* Modal overlay background */
-@import "../../fonts.scss";
+@import "../../colours.scss";
+@import '../../breakpoints.scss';
+
+@import '../../fonts.scss';
 
 :host{
   @include oss-font();
 }
 .modal {
-  // position: fixed;
-  // top: 0;
-  // left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3); /* Light overlay background */
@@ -61,11 +61,16 @@
 /* Round input fields */
 .input-group {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
 
   gap: 1rem;
+
+  @include app-lg(){
+    flex-direction: row;
+  }
 }
 
 .input-group input {
@@ -79,7 +84,7 @@
 
 /* Input focus effect */
 .input-group input:focus {
-  border-color: #007bff;
+  border-color: $primary ;
   outline: none;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
@@ -93,16 +98,6 @@ label {
 .btn{
   @include oss-font()
 }
-
-/* Submit button */
-// button[type="submit"] {
-//   width: 100%;
-//   padding: 12px;
-//   color: white;
-//   border: none;
-//   border-radius: 8px;
-//   cursor: pointer;
-// }
 
 /* Submit button hover effect */
 button[type="submit"]:hover {

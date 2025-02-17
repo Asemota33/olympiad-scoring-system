@@ -1,0 +1,32 @@
+$breakpoint-xs: 0;         // Extra small (phones)
+$breakpoint-sm: 576px;     // Small (tablets)
+$breakpoint-md: 768px;     // Medium (small laptops)
+$breakpoint-lg: 992px;     // Large (desktops)
+$breakpoint-xl: 1200px;    // Extra large (large desktops)
+
+// You can also add custom breakpoints if needed
+$breakpoint-xxl: 1400px;   // For very large screens
+
+@mixin app-xs {
+    @media (max-width: #{$breakpoint-sm - 1}) {
+      @content;
+    }
+  }
+  
+  @mixin app-sm {
+    @media (min-width: $breakpoint-sm) and (max-width: #{$breakpoint-md - 1}) {
+      @content;
+    }
+  }
+  
+  @mixin app-md {
+    @media (min-width: $breakpoint-md) and (max-width: #{$breakpoint-lg - 1}) {
+      @content;
+    }
+  }
+  
+  @mixin app-lg {
+    @media (min-width: $breakpoint-lg){
+        @content;
+    }
+  }

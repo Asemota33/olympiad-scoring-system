@@ -65,7 +65,7 @@ $edit: "./assets/edit.svg";
   }
 }
 
-.dropdown-label, mat-option{
+.dropdown-label, mat-option, mat-select{
   @include oss-font();
 }
 

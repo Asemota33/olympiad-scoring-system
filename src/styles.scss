@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
+@import "fonts.scss";
+
 @import "fonts.scss";
 
 html, body {
@@ -8,3 +12,130 @@ html, body {
     margin: 0;
     // font-family: 'Sharpsans', sans-serif;
 }
+
+
+.mat-select-panel {
+    padding: 15px !important;
+  }
+  @include mat.core();
+  // Define custom color palettes for primary, accent, and warn colors
+  $primary-palette: (
+    50: #e0f4ff,
+    100: #b3e0ff,
+    200: #80caff,
+    300: #4db6ff,
+    400: #26a1ff,
+    500: #0e8ffd, // Main color (provided)
+    600: #0077e5,
+    700: #0062cc,
+    800: #004fa3,
+    900: #003c7a,
+    A100: #80d0ff,
+    A200: #40b3ff,
+    A400: #0097ff,
+    A700: #0077e5,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #000000,
+      400: #000000,
+      500: #000000,
+      600: #000000,
+      700: #000000,
+      800: #000000,
+      900: #000000,
+      A100: #000000,
+      A200: #000000,
+      A400: #000000,
+      A700: #000000
+    )
+  );
+  
+  $accent-palette: (
+    50: #f2d1f9,
+    100: #e1a6f7,
+    200: #d17bf5,
+    300: #c258f2,
+    400: #a435f3, // Main color (provided)
+    500: #8a1bf0,
+    600: #7f1adc,
+    700: #7315b7,
+    800: #660f92,
+    900: #590a6d,
+    A100: #d6b3ff,
+    A200: #bc8cff,
+    A400: #a466ff,
+    A700: #932bff,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #000000,
+      400: #000000,
+      500: #000000,
+      600: #000000,
+      700: #000000,
+      800: #000000,
+      900: #000000,
+      A100: #000000,
+      A200: #000000,
+      A400: #000000,
+      A700: #000000
+    )
+  );
+  
+  $warn-palette: (
+    50: #ffcccc,
+    100: #ff9999,
+    200: #ff6666,
+    300: #ff3333,
+    400: #ff1a1a,
+    500: #ff636c, // Main color (provided)
+    600: #ff4c54,
+    700: #ff343b,
+    800: #ff1d22,
+    900: #ff0609,
+    A100: #ff99a1,
+    A200: #ff6690,
+    A400: #ff336f,
+    A700: #ff1a56,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #000000,
+      400: #000000,
+      500: #000000,
+      600: #000000,
+      700: #000000,
+      800: #000000,
+      900: #000000,
+      A100: #000000,
+      A200: #000000,
+      A400: #000000,
+      A700: #000000
+    )
+  );
+  
+  // Define the Material palettes from the color palettes
+  $primary-mat-palette: mat.define-palette($primary-palette);
+  $accent-mat-palette: mat.define-palette($accent-palette);
+  $warn-mat-palette: mat.define-palette($warn-palette);
+  
+  // Define your custom theme using the Material palettes
+  $theme: mat.define-light-theme((
+    color: (
+      primary: $primary-mat-palette,
+      accent: $accent-mat-palette,
+      warn: $warn-mat-palette,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  ));
+  
+  // Include the theme for Angular Material components
+  @include mat.core-theme($theme);
+  @include mat.button-theme($theme);
+  @include mat.all-component-themes($theme);
+  
