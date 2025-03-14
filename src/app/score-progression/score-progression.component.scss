@@ -296,10 +296,11 @@ h2 {
 }
 
 .tournament-bracket__match {
+  justify-content: space-between;
   display: flex;
   width: 100%;
   background-color: #e6e6e6;
-  padding: 1em;
+  margin: 1em 0;
   // border: 1px solid green;
   border-radius: 0.5em;
   outline: none;
@@ -627,4 +628,86 @@ h2 {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.subNavContentContainer{
+  display: flex;
+  margin-right: auto;
+  flex: 1;
+  @include oss-font("SharpSansBold");
+}
+
+.pageToolBar {
+// position: relative;
+display: flex;
+align-items: center;
+// justify-content: space-between;
+z-index: 1;
+height: 64px;
+font-size: 24px;
+font-weight: 700;
+box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.2); /* Shadow only at the bottom */
+background-color: white;
+}
+
+.btn {
+  color: white !important;
+  margin-top: 1em;
+  padding: 0px 14px;
+  @include oss-font("SharpSansSemibold");
+
+  &__customGames {
+    background-color: black;
+
+  }
+
+  &__publish {
+    background: linear-gradient(83.75deg, #0E8FFD 0%, #A435F3 48.5%, #FF636C 100%);
+
+  }
+
+
+}
+
+.entryLeftInput {
+  width: 60px; 
+  background-color: lightblue; 
+  height: 50px; 
+  font-size: 30px; 
+  text-align: center; 
+  border: none; 
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.entryRightInput {
+  width: 60px; 
+  background-color: lightblue; 
+  height: 50px; 
+  font-size: 30px; 
+  text-align: center; 
+  border: none; 
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.teamTxtContainer {
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // margin: 0 1em;
+  gap: 5px;
+  font-size: 24px;
+}
+
+.teamColor {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.saveBtn {
+  width: 100%;
+  text-align: center;
 }

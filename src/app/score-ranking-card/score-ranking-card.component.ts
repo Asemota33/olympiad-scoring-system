@@ -42,6 +42,7 @@ export class ScoreRankingCardComponent implements OnInit {
     this.router.navigate(['/points'], {
       queryParams: { game: gameVal },
     });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   private setColumns() {

@@ -1,15 +1,26 @@
+<mat-toolbar-row class="pageToolBar">
+  <div class="subNavContentContainer">
+      <span>Round Progression</span>
+  </div>
+  <!-- <div style="padding: 0px 14px; ">
+      <button style="margin-top: 0px;" mat-button class="btn btn__customGames">Add Custom game</button>
+  </div>
+  <div style="padding: 0px 14px; ">
+      <button style="margin-top: 0px;" mat-button class="btn btn__publish">Publish</button>
+  </div> -->
+</mat-toolbar-row>
 <div class="page-container">
   <div class="top-controls"> 
     <mat-form-field class="game-dropdown">
       <mat-label class="dropdown-label">Choose a game</mat-label>
       <mat-select >
         <mat-option value="option1">Football</mat-option>
-        <mat-option value="option2" disabled>Jeopardy (disabled)</mat-option>
+        <mat-option value="option2">Jeopardy </mat-option>
         <mat-option value="option3">Basketball</mat-option>
       </mat-select>
     </mat-form-field>
 
-    <div class="edit" (click)="editScore(selected)"> Edit <div class="edit-icon"> </div></div>
+    <!-- <div class="edit" (click)="editScore(selected)"> Edit <div class="edit-icon"> </div></div> -->
   </div>
   <div class="tournament-bracket tournament-bracket--rounded">
     <div
@@ -19,13 +30,57 @@
       <h3 class="tournament-bracket__round-title">{{ round.title }}</h3>
       <ul class="tournament-bracket__list">
         <li
-          *ngFor="let match of round.matches"
+          *ngFor="let match of round.matches; let i = index"
           class="tournament-bracket__item"
         >
+        <div class="saveBtn">
+          <button mat-button
+          (click)="saveScore(i, round, match)"
+          [hidden]="!(selectedBtnIndex === i && round.type === selectedRound)">save</button>
+        </div>
           <div class="tournament-bracket__match" tabindex="0">
-            <table class="tournament-bracket__table">
+            <!-- <span>
+              <button [hidden]="(selectedBtnIndex === i && round.type === selectedRound)" style="background-color: transparent; border: none; cursor: pointer; padding: 0px !important" (click)="editScore(i, round, match)">
+                <mat-icon style="color: black;" >edit</mat-icon>
+              </button>
+              <button [hidden]="!(selectedBtnIndex === i && round.type === selectedRound)" style="background-color: transparent; border: none; cursor: pointer; padding: 0px !important" (click)="saveScore(i, round, match)">
+                <mat-icon style="color: lightcoral;" >save</mat-icon>
+              </button>
+            </span> -->
+            <div class="inputContainer">
+              <input matInput 
+              class="entryLeftInput"
+              (input)="updateBtnIndex(i, round, match)"/>
+            </div>
+
+            <div style="flex-direction: row-reverse" class="teamTxtContainer">
+              <span
+              class="teamColor"
+              [ngStyle]="{ backgroundColor: 'red' }"></span>
+             <span>Red</span> 
+            </div>
+
+            <div class="teamTxtContainer">
+              <span style="font-size: 16px;">VS</span>
+            </div>
+
+            <div class="teamTxtContainer">
+              <span
+              class="teamColor"
+              [ngStyle]="{ backgroundColor: 'blue' }"></span>
+             <span>Blue</span> 
+            </div>
+
+            <div class="inputContainer">
+              <input matInput 
+              class="entryRightInput"
+              (input)="updateBtnIndex(i, round, match)"/>
+            </div>
+
+
+            <!-- <table class="tournament-bracket__table">
               <caption class="tournament-bracket__caption">
-              </caption>
+ / caption>
               <thead class="sr-only">
                 <tr>
                   <th>Team</th>
@@ -42,14 +97,14 @@
                 >
                   <td class="tournament-bracket__country">
                     <div class="color-code {{team.code}}"></div>
-                    <!-- <div   class="tournament-bracket__code">
-                      {{ team.code | titlecase}}
-                    </div> -->
+
                   </td>
                   <td class="tournament-bracket__score">
-                    <span class="tournament-bracket__number">{{
-                      team.score
-                    }}</span>
+                    <input
+                    [disabled]="!(selectedBtnIndex === i && round.type === selectedRound)"
+                    style="width: 32px;"
+                    />
+
                     <div
                       *ngIf="team.medal"
                       class="tournament-bracket__medal fa fa-trophy {{team.medal}}"
@@ -57,7 +112,7 @@
                   </td>
                 </tr>
               </tbody>
-            </table>
+            </table> -->
           </div>
         </li>
       </ul>

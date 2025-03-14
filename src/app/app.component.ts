@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
   }
 
   toggleMatToolbar(pageName: string) {
-    if (pageName === 'Matchup Generation') {
+    if (pageName === 'Matchup Generation' || pageName === "Score Progression") {
       this.matToolbarEnabled = false;
     } else {
       this.matToolbarEnabled = true;

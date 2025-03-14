@@ -11,8 +11,10 @@ import { EditScoreProgressionComponent } from '../edit-score-progression/edit-sc
   styleUrl: './score-progression.component.scss'
 })
 export class ScoreProgressionComponent {
-
+  enableBtn = true;
   selected = 'option2';
+  selectedBtnIndex = null;
+  selectedRound = "";
   tournamentRounds: any[] = [
     {
       type: 'quarterfinals',
@@ -93,8 +95,25 @@ export class ScoreProgressionComponent {
 
   }
   
-  editScore(selectedGame: string){
-    this.dialog.open(EditScoreProgressionComponent)
+  // editScore(selectedGame: string){
+  //   this.dialog.open(EditScoreProgressionComponent)
+  // }
+
+  updateBtnIndex(index: any, round: any, match: any) {
+    console.log(index);
+    console.log(round, " round")
+    console.log(match, " match")
+    this.selectedBtnIndex = index;
+    this.selectedRound = round.type.toLowerCase();
+
+  }
+
+  saveScore(index: any, round: any, match: any) {
+    console.log(index);
+    console.log(round, " round")
+    console.log(match, " match")
+    this.selectedBtnIndex = null;
+
   }
 
 
