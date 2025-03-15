@@ -1,3 +1,4 @@
+@use '../../colours' as colours;
 @import "../../fonts.scss";
 
 $breakpoint-xs: 24em;
@@ -69,18 +70,18 @@ $edit: "./assets/edit.svg";
   @include oss-font();
 }
 
-html {
-  font-size: 15px;
-  @media (min-width: $breakpoint-sm) {
-    font-size: 14px;
-  }
-  @media (min-width: $breakpoint-md) {
-    font-size: 15px;
-  }
-  @media (min-width: $breakpoint-lg) {
-    font-size: 16px;
-  }
-}
+// html {
+//   font-size: 15px;
+//   @media (min-width: $breakpoint-sm) {
+//     font-size: 14px;
+//   }
+//   @media (min-width: $breakpoint-md) {
+//     font-size: 15px;
+//   }
+//   @media (min-width: $breakpoint-lg) {
+//     font-size: 16px;
+//   }
+// }
 
 body {
   background-color: #f1f1f1;
@@ -132,13 +133,13 @@ h2 {
   }
 }
 
-.tournament-bracket--rounded {
-  // padding: 2rem;
+// .tournament-bracket--rounded {
+//   // padding: 2rem;
 
-  @media (min-width: $breakpoint-md) {
-    //padding: 2rem;
-  }
-}
+//   @media (min-width: $breakpoint-md) {
+//     //padding: 2rem;
+//   }
+// }
 
 .tournament-bracket__round {
   display: block;
@@ -389,6 +390,7 @@ h2 {
     width: 1em;
     text-align: center;
     padding: 0.2em 0.1em;
+    margin-top: 1rem;
 
     @media (min-width: $breakpoint-sm) {
       order: 1;
@@ -408,7 +410,6 @@ h2 {
       justify-content: flex-end;
 
       @media (min-width: $breakpoint-xs) {
-        order: 0;
       }
 
       @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
@@ -418,10 +419,8 @@ h2 {
     }
 
     .tournament-bracket__score {
-      order: 0;
 
       @media (min-width: $breakpoint-xs) {
-        order: 2;
       }
     }
   }
@@ -465,12 +464,12 @@ h2 {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  @media (min-width: $breakpoint-xs) {
-    flex-direction: column-reverse;
-  }
-  @media (min-width: $breakpoint-sm) {
-    flex-direction: column-reverse;
-  }
+  // @media (min-width: $breakpoint-xs) {
+  //   flex-direction: column-reverse;
+  // }
+  // @media (min-width: $breakpoint-sm) {
+  //   flex-direction: column-reverse;
+  // }
 }
 
 .tournament-bracket__country {
@@ -478,6 +477,7 @@ h2 {
   display: flex;
   margin-top: 0.5em;
   align-items: center;
+  
   @media (max-width: $breakpoint-xs) {
     margin-top: 0;
   }
@@ -498,8 +498,6 @@ h2 {
   @include oss-font("SharpSansBold");
   border: 0;
   text-decoration: none;
-  cursor: help;
-  transition: padding 0.2s ease-in-out;
   @media (max-width: $breakpoint-xs) {
     padding: 0 0.25em;
   }
@@ -567,8 +565,8 @@ h2 {
 }
 
 .color-code {
-  height: 2rem;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
   // border-radius: 50%;
   // border: 1px solid;
 }
@@ -627,4 +625,48 @@ h2 {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.team-score{
+  width: 50px;
+
+  // @media (max-width: $breakpoint-xs) {
+  //   width: 50px;
+  // }
+  input{
+    text-align: center;
+  }
+  input:focus{
+    color: white;
+  }
+  
+  ::ng-deep{
+    .mdc-text-field--focused{
+      background-color: colours.$inputBlue !important;
+
+      .mdc-line-ripple::before{
+        border-bottom-style: none !important;
+      }
+    }
+
+    .mat-mdc-text-field-wrapper{
+      background-color: #e6e6e6 ;
+
+      .mdc-line-ripple::before{
+        border-bottom-style: none !important;
+      }
+    }
+
+  }
+
+  ::ng-deep{
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none;
+    }
+  }
+
+  & input:focus {
+    cursor: text; /* This will ensure the input shows an edit cursor when active */
+    // border: 1px solid #3f51b5; /* Optional: adds a border when the input is focused */
+  }
 }

@@ -9,7 +9,6 @@
       </mat-select>
     </mat-form-field>
 
-    <div class="edit" (click)="editScore(selected)"> Edit <div class="edit-icon"> </div></div>
   </div>
   <div class="tournament-bracket tournament-bracket--rounded">
     <div
@@ -24,8 +23,6 @@
         >
           <div class="tournament-bracket__match" tabindex="0">
             <table class="tournament-bracket__table">
-              <caption class="tournament-bracket__caption">
-              </caption>
               <thead class="sr-only">
                 <tr>
                   <th>Team</th>
@@ -42,18 +39,13 @@
                 >
                   <td class="tournament-bracket__country">
                     <div class="color-code {{team.code}}"></div>
-                    <!-- <div   class="tournament-bracket__code">
-                      {{ team.code | titlecase}}
-                    </div> -->
                   </td>
                   <td class="tournament-bracket__score">
-                    <span class="tournament-bracket__number">{{
-                      team.score
-                    }}</span>
-                    <div
-                      *ngIf="team.medal"
-                      class="tournament-bracket__medal fa fa-trophy {{team.medal}}"
-                    ></div>
+                    <mat-form-field class="team-score" color="primary"  #tooltip="matTooltip"
+                    matTooltip="Edit"
+                    [matTooltipPosition]="'below'">
+                      <input matInput value="{{team.score}}" />
+                    </mat-form-field>     
                   </td>
                 </tr>
               </tbody>
