@@ -31,6 +31,13 @@ $edit: "./assets/edit.svg";
   }
 }
 
+.cue-text{
+  @include oss-font();
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 .top-controls {
   display: flex;
   align-items: center;
