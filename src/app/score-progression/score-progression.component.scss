@@ -18,6 +18,7 @@ $orange: "assets/orange.svg";
 $pink: "assets/pink.svg";
 $purple: "assets/purple.svg";
 $yellow: "assets/yellow.svg";
+$unassigned: "assets/unassigned.svg";
 
 $edit: "./assets/edit.svg";
 //
@@ -603,6 +604,13 @@ h2 {
 
 .green {
   background-image: url($green);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.unassigned {
+  background-image: url($unassigned);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

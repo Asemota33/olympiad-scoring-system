@@ -50,14 +50,14 @@ export class ScoreProgressionComponent implements OnInit {
       matches: [
         {
           teams: [
-            { name: 'Purple', code: 'purple', score: 1 },
-            { name: 'Blue', code: 'blue', score: 2, isWinner: true }
+            { name: 'Purple', code: 'unassigned', score: 0 },
+            { name: 'Blue', code: 'unassigned', score: 0, isWinner: true }
           ]
         },
         {
           teams: [
-            { name: 'Gray', code: 'gray', score: 1 },
-            { name: 'Green', code: 'green', score: 2, isWinner: true }
+            { name: 'Gray', code: 'unassigned', score: 0 },
+            { name: 'Green', code: 'unassigned', score: 0, isWinner: true }
           ]
         }
       ]
@@ -68,8 +68,8 @@ export class ScoreProgressionComponent implements OnInit {
       matches: [
         {
           teams: [
-            { name: 'Purple', code: 'purple', score: 1 },
-            { name: 'Gray', code: 'gray', score: 3, isWinner: true, medal: 'bronze' }
+            { name: 'Purple', code: 'unassigned', score: 0 },
+            { name: 'Gray', code: 'unassigned', score: 0, isWinner: true, medal: 'bronze' }
           ]
         }
       ]
@@ -80,8 +80,8 @@ export class ScoreProgressionComponent implements OnInit {
       matches: [
         {
           teams: [
-            { name: 'Blue', code: 'blue', score: 1, medal: 'silver' },
-            { name: 'Green', code: 'green', score: 3, isWinner: true, medal: 'gold' }
+            { name: 'Blue', code: 'unassigned', score: 0, medal: 'silver' },
+            { name: 'Green', code: 'unassigned', score: 0, isWinner: true, medal: 'gold' }
           ]
         }
       ]
