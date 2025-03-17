@@ -20,6 +20,7 @@ import { GameScoreCardComponent } from './game-score-card/game-score-card.compon
 import { EditScoreProgressionComponent } from './edit-score-progression/edit-score-progression.component';
 import { MatchupGeneratorComponent } from './matchup-generator/matchup-generator.component';
 import { MatchupCardComponent } from './matchup-card/matchup-card.component';
+import { PresentationPageComponent } from './presentation-page/presentation-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { MatchupCardComponent } from './matchup-card/matchup-card.component';
     GameScoreCardComponent,
     EditScoreProgressionComponent,
     MatchupGeneratorComponent,
-    MatchupCardComponent
+    MatchupCardComponent,
+    PresentationPageComponent
   ],
   imports: [
     BrowserModule,
