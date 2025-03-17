@@ -1,15 +1,16 @@
 <div class="page-container">
-  <div class="top-controls"> 
+  <div class="top-controls">
     <mat-form-field class="game-dropdown">
       <mat-label class="dropdown-label">Choose a game</mat-label>
-      <mat-select >
+      <mat-select>
         <mat-option value="option1">Football</mat-option>
         <mat-option value="option2" disabled>Jeopardy (disabled)</mat-option>
         <mat-option value="option3">Basketball</mat-option>
       </mat-select>
     </mat-form-field>
-    <div class="cue-text"> <mat-icon color="primary">info</mat-icon> Click a score to start editing</div>
-
+    <div class="cue-text">
+      <mat-icon color="primary">info</mat-icon> Click a score to start editing
+    </div>
   </div>
   <div class="tournament-bracket tournament-bracket--rounded">
     <div
@@ -22,14 +23,14 @@
           *ngFor="let match of round.matches"
           class="tournament-bracket__item"
         >
-          <div class="tournament-bracket__match" tabindex="0">
+          <div
+            class="tournament-bracket__match"
+            [ngClass]="{
+              'show-buttons': hasTeamScoreChanged(round.title, match)
+            }"
+            tabindex="0"
+          >
             <table class="tournament-bracket__table">
-              <thead class="sr-only">
-                <tr>
-                  <th>Team</th>
-                  <th>Score</th>
-                </tr>
-              </thead>
               <tbody class="tournament-bracket__content">
                 <tr
                   *ngFor="let team of match.teams"
@@ -39,18 +40,41 @@
                   class="tournament-bracket__team"
                 >
                   <td class="tournament-bracket__country">
-                    <div class="color-code {{team.code}}"></div>
+                    <div class="color-code {{ team.code }}"></div>
                   </td>
                   <td class="tournament-bracket__score">
-                    <mat-form-field class="team-score" color="primary"  #tooltip="matTooltip"
-                    matTooltip="Edit"
-                    [matTooltipPosition]="'below'">
-                      <input matInput value="{{team.score}}" />
-                    </mat-form-field>     
+                    <mat-form-field
+                      class="team-score"
+                      color="primary"
+                      #tooltip="matTooltip"
+                      matTooltip="Edit"
+                      [matTooltipPosition]="'below'"
+                    >
+                      <input
+                        matInput
+                        type="number"
+                        value="{{ team.score }}"
+                        [formControl]="getControlName(round.title, match, team)"
+                      />
+                    </mat-form-field>
                   </td>
                 </tr>
               </tbody>
             </table>
+            <td
+              class="match-controls"
+              *ngIf="hasTeamScoreChanged(round.title, match)"
+            >
+              <button mat-button color="primary">Save</button>
+
+              <button
+                mat-button
+                color="primary"
+                (click)="onCancel(round.title, match)"
+              >
+                Cancel
+              </button>
+            </td>
           </div>
         </li>
       </ul>
